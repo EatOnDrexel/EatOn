@@ -3,6 +3,11 @@
 # Drexel University
 # Python 2.7
 
+app_id = "lorem"
+app_key = "ipsum"
+number_of_results = 10
+search_term = "chicken"
+
 # Taking initial user inputs
 Calories_Limit = int(input("What is your daily caloric limit?"))
 
@@ -65,7 +70,13 @@ print(Fat_Remaining_Grams)
 print(Carbs_Remaining_Grams)
 
 
+# Clustering users into groups by grams of each macro they need to eat
 
+# Generating call request
+
+API_Call = "https://api.edamam.com/search?" + search_term + "&app_id=" + app_id + "&app_key=" + app_key + "&from=0&to=" + (number_of_results - 1) + "&"
+
+print(API_Call)
 
 
 
