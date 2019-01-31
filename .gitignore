@@ -1,5 +1,9 @@
 # ignore local PyCharm files
 .idea/
 
-#ignore Mac metadata
+# Ignore PyCharm cache
+__pycache__
+
+# Ignore Mac metadata
 .DS_Store
+
