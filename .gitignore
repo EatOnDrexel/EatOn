@@ -1,0 +1,5 @@
+# ignore local PyCharm files
+.idea/
+
+#ignore Mac metadata
+.DS_Store
