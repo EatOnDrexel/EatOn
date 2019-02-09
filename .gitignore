@@ -9,3 +9,6 @@ __pycache__
 
 # Ignore all Python byte code
 *.pyc
+
+# Ignore Virtual Environments
+venv/
