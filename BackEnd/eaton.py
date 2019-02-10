@@ -7,13 +7,14 @@ import functions
 
 
 # Taking initial user inputs
-functions.take_calories_input()
+
 functions.collect_macro_input()
 
 # Calculate how many calories have been consumed and how many grams are left for the day of each macro
 functions.calculate_remaining_calories()
-functions.calculate_remaining_grams()
 functions.calculate_limits()
+functions.calculate_remaining_grams()
+
 
 # Generate API call
 request = functions.generate_API_call()

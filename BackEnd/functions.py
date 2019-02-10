@@ -7,6 +7,7 @@ fat_consumed = 0
 carbs_consumed = 0
 
 Calories_Limit = 0
+Calories_Remaining = 0
 
 Protein_Desired = 0
 Fat_Desired = 0
@@ -21,9 +22,14 @@ r = None
 
 # Takes user input for how many calories they can have in a day
 def take_calories_input():
+
+    global Calories_Limit
     print("What is your daily caloric limit?")
     user_input = int(input())
+
+    Calories_Limit = user_input
     return user_input
+
 
 
 # Takes user input as integer to store as value of a given macro
@@ -73,6 +79,7 @@ def generate_API_call():
         ('app_key', config.api_key),
         ('from', '0'),
         ('to', str(config.number_of_results)),
+        ('calories', str(int(Calories_Remaining * .5)) + "-" + str(Calories_Remaining)),
         ('nutrients[PROCNT]', str(int(Protein_Remaining_Grams * .9)) + "-" + str(int(Protein_Remaining_Grams))),
         ('nutrients[FAT]', str(int(Fat_Remaining_Grams * .9)) + "-" + str(int(Fat_Remaining_Grams))),
         ('nutrients[CHOCDF]', str(int(Carbs_Remaining_Grams * .9)) + "-" + str(int(Carbs_Remaining_Grams))),
@@ -113,7 +120,8 @@ def calculate_remaining_calories():
     global Calories_Remaining
 
     Calories_Consumed = sum(calculate_calories())
-    Calories_Remaining = Calories_Limit - Calories_Consumed
+    Calories_Remaining = take_calories_input() - Calories_Consumed
+    print(Calories_Limit)
 
 
 # Asks user for search query
