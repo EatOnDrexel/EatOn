@@ -1,11 +1,11 @@
-<?xml version="1.0" encoding="UTF-8"?><project name="Untitled Gantt Project" company="" webLink="http://" view-date="2019-01-06" view-index="0" gantt-divider-location="663" resource-divider-location="300" version="2.8.9" locale="en_US">
+<?xml version="1.0" encoding="UTF-8"?><project name="Untitled Gantt Project" company="" webLink="http://" view-date="2018-12-23" view-index="0" gantt-divider-location="663" resource-divider-location="300" version="2.8.9" locale="en_US">
     <description/>
     <view zooming-state="default:7" id="gantt-chart">
-        <field id="tpd11" name="Outline number" width="20" order="0"/>
-        <field id="tpd3" name="Name" width="406" order="1"/>
+        <field id="tpd11" name="Outline number" width="61" order="0"/>
+        <field id="tpd3" name="Name" width="365" order="1"/>
         <field id="tpd4" name="Begin date" width="120" order="2"/>
         <field id="tpd5" name="End date" width="98" order="3"/>
-        <timeline><![CDATA[16,3,10,2]]></timeline>
+        <timeline><![CDATA[2,3,10,16]]></timeline>
     </view>
     <view id="resource-table">
         <field id="0" name="Name" width="210" order="0"/>
@@ -482,6 +482,7 @@
                 </task>
                 <task id="383" name="Testing Plan" color="#8cb6ce" meeting="false" start="2019-02-11" duration="1" complete="0" thirdDate="2019-02-11" thirdDate-constraint="1" expand="true">
                     <depend id="385" type="2" difference="0" hardness="Strong"/>
+                    <depend id="506" type="2" difference="0" hardness="Strong"/>
                 </task>
                 <task id="385" name="Detailed Status Coding Tasks 2" color="#8cb6ce" meeting="false" start="2019-02-18" duration="1" complete="0" thirdDate="2019-02-18" thirdDate-constraint="1" expand="true">
                     <depend id="387" type="2" difference="0" hardness="Strong"/>
@@ -492,9 +493,11 @@
                 <task id="389" name="Detailed Status Coding Tasks 3" color="#8cb6ce" meeting="false" start="2019-03-04" duration="1" complete="0" thirdDate="2019-03-04" thirdDate-constraint="1" expand="true">
                     <depend id="434" type="2" difference="0" hardness="Strong"/>
                 </task>
-                <task id="434" name="Final Report" color="#8cb6ce" meeting="false" start="2019-03-18" duration="1" complete="0" thirdDate="2019-03-18" thirdDate-constraint="1" expand="true"/>
+                <task id="434" name="Final Report" color="#8cb6ce" meeting="false" start="2019-03-18" duration="1" complete="0" thirdDate="2019-03-18" thirdDate-constraint="1" expand="true">
+                    <depend id="44" type="2" difference="0" hardness="Strong"/>
+                </task>
             </task>
-            <task id="10" name="Development" color="#000000" meeting="false" start="2019-01-14" duration="30" complete="0" thirdDate="2009-10-12" thirdDate-constraint="0" expand="true" cost-manual-value="0.0" cost-calculated="false">
+            <task id="10" name="Development" color="#000000" meeting="false" start="2019-01-14" duration="34" complete="0" thirdDate="2009-10-12" thirdDate-constraint="0" expand="true" cost-manual-value="0.0" cost-calculated="false">
                 <depend id="16" type="2" difference="0" hardness="Strong"/>
                 <depend id="17" type="2" difference="0" hardness="Strong"/>
                 <depend id="45" type="2" difference="0" hardness="Strong"/>
@@ -602,7 +605,7 @@
                     <customproperty taskproperty-id="tpc198" value="0.0"/>
                     <customproperty taskproperty-id="tpc199" value="0.0"/>
                 </task>
-                <task id="228" name="Develop Algorithm" color="#8cb6ce" meeting="false" start="2019-01-21" duration="15" complete="0" thirdDate="2019-01-21" thirdDate-constraint="0" expand="true">
+                <task id="228" name="Develop Algorithm" color="#8cb6ce" meeting="false" start="2019-01-21" duration="19" complete="0" thirdDate="2019-01-21" thirdDate-constraint="0" expand="true">
                     <depend id="468" type="2" difference="0" hardness="Strong"/>
                     <task id="235" name="Create Input Functions" color="#8cb6ce" meeting="false" start="2019-01-21" duration="1" complete="0" thirdDate="2019-01-28" thirdDate-constraint="0" expand="true">
                         <depend id="245" type="2" difference="0" hardness="Strong"/>
@@ -629,12 +632,18 @@
                     <task id="343" name="Develop Output" color="#8cb6ce" meeting="false" start="2019-02-06" duration="2" complete="0" thirdDate="2019-01-21" thirdDate-constraint="0" expand="true">
                         <depend id="473" type="2" difference="0" hardness="Strong"/>
                     </task>
-                    <task id="473" name="Develop API Call" meeting="false" start="2019-02-08" duration="1" complete="0" expand="true"/>
+                    <task id="473" name="Develop API Call" meeting="false" start="2019-02-08" duration="1" complete="0" expand="true">
+                        <depend id="503" type="2" difference="0" hardness="Strong"/>
+                    </task>
+                    <task id="503" name="Have Function Take JQuery Compatable Input" color="#8cb6ce" meeting="false" start="2019-02-11" duration="2" complete="0" thirdDate="2019-02-11" thirdDate-constraint="0" expand="true">
+                        <depend id="506" type="2" difference="0" hardness="Strong"/>
+                    </task>
+                    <task id="506" name="Develop Catches for Bad Inputs" color="#8cb6ce" meeting="false" start="2019-02-13" duration="2" complete="0" thirdDate="2019-02-13" thirdDate-constraint="0" expand="true"/>
                 </task>
-                <task id="345" name="Frontend" color="#000000" meeting="false" start="2019-01-14" duration="15" complete="0" thirdDate="2019-01-14" thirdDate-constraint="0" expand="true">
+                <task id="345" name="Frontend" color="#000000" meeting="false" start="2019-01-14" duration="19" complete="0" thirdDate="2019-01-14" thirdDate-constraint="0" expand="true">
                     <depend id="14" type="2" difference="0" hardness="Strong"/>
                     <depend id="45" type="2" difference="0" hardness="Strong"/>
-                    <task id="229" name="Design Frontend" color="#8cb6ce" meeting="false" start="2019-01-14" duration="3" complete="0" thirdDate="2019-01-14" thirdDate-constraint="0" expand="true">
+                    <task id="229" name="Design Frontend Input Screens" color="#8cb6ce" meeting="false" start="2019-01-14" duration="3" complete="0" thirdDate="2019-01-14" thirdDate-constraint="0" expand="true">
                         <depend id="13" type="2" difference="0" hardness="Strong"/>
                     </task>
                     <task id="13" name="Create Input Screens" color="#8cb6ce" meeting="false" start="2019-01-17" duration="2" complete="0" thirdDate="2009-11-04" thirdDate-constraint="0" expand="true" cost-manual-value="0.0" cost-calculated="false">
@@ -699,9 +708,18 @@
                     <task id="501" name="Parse Through JSON From API Call" color="#8cb6ce" meeting="false" start="2019-01-28" duration="3" complete="0" thirdDate="2019-01-28" thirdDate-constraint="0" expand="true">
                         <depend id="444" type="2" difference="0" hardness="Strong"/>
                     </task>
-                    <task id="444" name="Choose Final Frontend" color="#8cb6ce" meeting="false" start="2019-01-31" duration="2" complete="0" thirdDate="2019-01-24" thirdDate-constraint="0" expand="true"/>
+                    <task id="444" name="Choose Final Input Screen" color="#8cb6ce" meeting="false" start="2019-01-31" duration="2" complete="0" thirdDate="2019-01-24" thirdDate-constraint="0" expand="true">
+                        <depend id="505" type="2" difference="0" hardness="Strong"/>
+                    </task>
+                    <task id="505" name="Add Logo and Set Background Color" color="#8cb6ce" meeting="false" start="2019-02-04" duration="1" complete="0" thirdDate="2019-02-04" thirdDate-constraint="0" expand="true">
+                        <depend id="521" type="2" difference="0" hardness="Strong"/>
+                    </task>
+                    <task id="521" name="Decide How Many Results to Show" color="#8cb6ce" meeting="false" start="2019-02-05" duration="1" complete="0" thirdDate="2019-02-05" thirdDate-constraint="0" expand="true">
+                        <depend id="527" type="2" difference="0" hardness="Strong"/>
+                    </task>
+                    <task id="527" name="Finalize Output Screen" color="#8cb6ce" meeting="false" start="2019-02-06" duration="2" complete="0" thirdDate="2019-01-14" thirdDate-constraint="0" expand="true"/>
                 </task>
-                <task id="14" name="Review JQuery" color="#8cb6ce" meeting="false" start="2019-02-04" duration="5" complete="0" thirdDate="2009-11-04" thirdDate-constraint="0" expand="true" cost-manual-value="0.0" cost-calculated="false">
+                <task id="14" name="Review JQuery" color="#8cb6ce" meeting="false" start="2019-02-08" duration="5" complete="0" thirdDate="2009-11-04" thirdDate-constraint="0" expand="true" cost-manual-value="0.0" cost-calculated="false">
                     <depend id="468" type="2" difference="0" hardness="Strong"/>
                     <customproperty taskproperty-id="tpc150" value="false"/>
                     <customproperty taskproperty-id="tpc151" value="false"/>
@@ -754,15 +772,15 @@
                     <customproperty taskproperty-id="tpc198" value="0.0"/>
                     <customproperty taskproperty-id="tpc199" value="0.0"/>
                 </task>
-                <task id="468" name="Combine Python and Front End" color="#8cb6ce" meeting="false" start="2019-02-11" duration="5" complete="0" thirdDate="2019-02-11" thirdDate-constraint="0" expand="true">
+                <task id="468" name="Combine Python and Front End" color="#8cb6ce" meeting="false" start="2019-02-15" duration="5" complete="0" thirdDate="2019-02-11" thirdDate-constraint="0" expand="true">
                     <depend id="494" type="2" difference="0" hardness="Strong"/>
                 </task>
-                <task id="494" name="Finalize Testing Plan" color="#8cb6ce" meeting="false" start="2019-02-18" duration="2" complete="0" thirdDate="2019-02-18" thirdDate-constraint="0" expand="true">
+                <task id="494" name="Finalize CI 493 Testing Plan" color="#8cb6ce" meeting="false" start="2019-02-22" duration="2" complete="0" thirdDate="2019-02-18" thirdDate-constraint="0" expand="true">
                     <depend id="498" type="2" difference="0" hardness="Strong"/>
                 </task>
-                <task id="498" name="Test Program" color="#8cb6ce" meeting="false" start="2019-02-20" duration="3" complete="0" thirdDate="2019-02-20" thirdDate-constraint="0" expand="true"/>
+                <task id="498" name="Test Program" color="#8cb6ce" meeting="false" start="2019-02-26" duration="3" complete="0" thirdDate="2019-02-20" thirdDate-constraint="0" expand="true"/>
             </task>
-            <task id="45" name="Develop CI 492 Presentation" color="#8cb6ce" meeting="false" start="2019-02-25" duration="10" complete="0" thirdDate="2019-02-22" thirdDate-constraint="1" expand="true">
+            <task id="45" name="Develop CI 492 Presentation" color="#8cb6ce" meeting="false" start="2019-03-01" duration="10" complete="0" thirdDate="2019-02-22" thirdDate-constraint="1" expand="true">
                 <depend id="44" type="2" difference="0" hardness="Strong"/>
                 <depend id="434" type="2" difference="0" hardness="Strong"/>
             </task>
