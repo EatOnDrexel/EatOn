@@ -12,3 +12,19 @@ __pycache__
 
 # Ignore Virtual Environments
 venv/
+
+# Ignore contents of /var on server not related to application
+lib
+mail
+run
+backups
+local
+opt
+snap
+cache
+spool
+crash
+log
+tmp
+lock
+
