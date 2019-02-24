@@ -13,34 +13,34 @@
 		<title>EatON</title>
 	</head>
 	<body>
-		<form id="EatON" name="EatON" action="EatON.html" method="get">
+		<form id="EatON" name="EatON" action="Recommend.php" method="POST">
 			<!--<h1>EatON</h1>-->
 			<img src="..\EatON.png" alt="EatON_Logo" height="150" width="150"></img>
 			<h3>Daily Requirement: </h3>
 			<li><label>
-				<font size="3">Calorie: </font><br><input type="number" id="DCal" name="DCal" placeholder="(Cal)"><font size="3">Cal </font>
+				<font size="3">Calorie: </font><br><input type="number" id="RCal" name="RCal" placeholder="(Cal)" required><font size="3">Cal </font>
 			</label></li>
 			<li><label>
-				<font size="3">Carbohydrate: </font><br><input type="number" id="DCarb" name="DCarb" placeholder="(grams)"><font size="3">g </font>
+				<font size="3">Carbohydrate: </font><br><input type="number" id="RCarb" name="RCarb" placeholder="(grams)" required><font size="3">g </font>
 			</label></li>
 			<li><label>
-				<font size="3">Protein: </font><br><input type="number" id="DPro" name="DPro" placeholder="(grams)"><font size="3">g </font>
+				<font size="3">Protein: </font><br><input type="number" id="RPro" name="RPro" placeholder="(grams)" required><font size="3">g </font>
 			</label></li>
 			<li><label>
-				<font size="3">Fat: </font><br><input type="number" id="DFat" name="DFat" placeholder="(grams)"><font size="3">g </font>
+				<font size="3">Fat: </font><br><input type="number" id="RFat" name="RFat" placeholder="(grams)" required><font size="3">g </font>
 			</label></li>
 			<h3>Consumed today: </h3>
 			<li><label>
-				<font size="3">Calorie: </font><br><input type="number" id="CCal" name="CCal" placeholder="(grams)"><font size="3">Cal </font>
+				<font size="3">Calorie: </font><br><input type="number" id="CCal" name="CCal" placeholder="(Cal)" required><font size="3">Cal </font>
 			</label></li>
 			<li><label>
-				<font size="3">Carbohydrate: </font><br><input type="number" id="CCarb" name="CCarb" placeholder="(grams)"><font size="3">g </font>
+				<font size="3">Carbohydrate: </font><br><input type="number" id="CCarb" name="CCarb" placeholder="(grams)" required><font size="3">g </font>
 			</label></li>
 			<li><label>
-				<font size="3">Protein: </font><br><input type="number" id="CPro" name="CPro" placeholder="(grams)"><font size="3">g </font>
+				<font size="3">Protein: </font><br><input type="number" id="CPro" name="CPro" placeholder="(grams)" required><font size="3">g </font>
 			</label></li>
 			<li><label>
-				<font size="3">Fat: </font><br><input type="number" id="CFat" name="CFat" placeholder="(Cal)"><font size="3">g </font>
+				<font size="3">Fat: </font><br><input type="number" id="CFat" name="CFat" placeholder="(grams)" required><font size="3">g </font>
 			</label></li>
 			<br>
 			<button type="submit" form="EatON" value="Search">Search</button>
