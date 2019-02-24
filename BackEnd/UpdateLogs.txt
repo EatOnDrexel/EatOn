@@ -1,1 +1,3 @@
 2/24/2019 Uploaded newEatOn.py file summerizing to one script
+
+2/24/19 Created JamesFNs file to rewrite core backend into one script to be called by PHP. Removed separate functions and globals. Takes input from PHP pass through rather than console.

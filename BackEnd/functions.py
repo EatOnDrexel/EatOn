@@ -2,9 +2,9 @@ import config
 import requests
 
 # Declaring Variables for use later
-pro_consumed = 0
-fat_consumed = 0
-carbs_consumed = 0
+Protein_consumed = 0
+Fat_consumed = 0
+Carbs_consumed = 0
 
 Calories_Limit = 0
 Calories_Remaining = 0
@@ -41,9 +41,9 @@ def take_input(macro):
 
 # Takes input of macros consumed in the day. Runs function take_input for each macro
 def collect_macro_input():
-    global pro_consumed
-    global fat_consumed
-    global carbs_consumed
+    global Protein_consumed
+    global Fat_consumed
+    global Carbs_consumed
 
     pro_consumed = take_input("protein")
     fat_consumed = take_input("fat")
@@ -53,9 +53,9 @@ def collect_macro_input():
 # Calculating how many calories of each macro have been eaten that day
 def calculate_calories():
 
-    global pro_consumed
-    global fat_consumed
-    global carbs_consumed
+    global Protein_consumed
+    global Fat_consumed
+    global Carbs_consumed
 
     pro_consumed_cals = pro_consumed * 4
     fat_consumed_cals = fat_consumed * 9
@@ -109,9 +109,9 @@ def calculate_remaining_grams():
     global Fat_Remaining_Grams
     global Carbs_Remaining_Grams
 
-    Protein_Remaining_Grams = Protein_Limit - pro_consumed
-    Fat_Remaining_Grams = Fat_Limit - fat_consumed
-    Carbs_Remaining_Grams = Carbs_Limit - carbs_consumed
+    Protein_Remaining_Grams = Protein_Limit - Protein_consumed
+    Fat_Remaining_Grams = Fat_Limit - Fat_consumed
+    Carbs_Remaining_Grams = Carbs_Limit - Carbs_consumed
 
 
 def calculate_remaining_calories():
