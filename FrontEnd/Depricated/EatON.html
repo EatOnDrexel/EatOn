@@ -1,0 +1,53 @@
+<html>
+	<head>
+		<!--javascript here-->
+		<script>
+			alert("This is the version of calculating the BMI or the amount they should be eating by ourselves. ");
+		</script>
+		<!--bootstrap here-->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+		<!--css here-->
+		<link rel="stylesheet" href="EatON.css">
+		<title>EatON</title>
+		<!--jquery here-->
+		<script src="jquery-3.3.1.min.js"></script>
+	</head>
+	<body>
+		<form id="EatON" name="EatON" action="EatON.html" method="get">
+			<img src="EatON.png" alt="EatON_Logo" height="150" width="150"></img>
+			<h3>User Input: </h3>
+			<li><label>
+				<font size="3">Age: </font><input type="number" id="Age" name="Age">
+			</label></li>
+			<li><label>
+				<font size="3">Height: </font><input type="number" id="Height" name="Height">
+				<select>
+					<option value="ft">ft.</option>
+					<option value="cm">cm.</option>
+				</select>
+			</label></li>
+			<li><label>
+				<font size="3">Weight: </font><input type="number" id="Weight" name="Weight">
+				<select>
+					<option value="lb">Lb.</option>
+					<option value="kg">Kg.</option>
+				</select>
+			</label></li>
+			<h3>Macro-Nutrients: </h3>
+			<li><label>
+				<font size="3">Calorie: </font><input type="number" id="Cal" name="Cal">
+			</label></li>
+			<li><label>
+				<font size="3">Carbohydrate: </font><input type="number" id="Carb" name="Carb">
+			</label></li>
+			<li><label>
+				<font size="3">Protein: </font><input type="number" id="Pro" name="Pro">
+			</label></li>
+			<li><label>
+				<font size="3">Fat: </font><input type="number" id="Fat" name="Fat">
+			</label></li>
+			<br>
+			<button type="submit" form="EatON" value="Search">Search</button>
+		</form>
+	</body>
+</html>

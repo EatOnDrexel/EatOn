@@ -2,4 +2,5 @@
 2/24/2019 Updated EatON2.html for php connection to python
 2/24/2019 Uploaded Recommend.php
 2/24/2019 Uploaded EatON5.html This is the latest version of the form
-2/24/2019 Updated Recommend.php to match the newest pythong script
+2/24/2019 Updated Recommend.php to match the newest python script
+2/26/19 Created deprecated folder and moved old files into it. Renamed EatON5 to EatON

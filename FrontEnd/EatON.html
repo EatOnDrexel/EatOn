@@ -1,50 +1,43 @@
 <html>
 	<head>
-		<!--javascript here-->
-		<script>
-			alert("This is the version of calculating the BMI or the amount they should be eating by ourselves. ");
-		</script>
 		<!--bootstrap here-->
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
 		<!--css here-->
 		<link rel="stylesheet" href="EatON.css">
-		<title>EatON</title>
 		<!--jquery here-->
 		<script src="jquery-3.3.1.min.js"></script>
+		<title>EatON</title>
 	</head>
 	<body>
-		<form id="EatON" name="EatON" action="EatON.html" method="get">
-			<img src="EatON.png" alt="EatON_Logo" height="150" width="150"></img>
-			<h3>User Input: </h3>
+		<form id="EatON" name="EatON" action="Recommend.php" method="POST">
+			<!--<h1>EatON</h1>-->
+			<img src="..\EatON.png" alt="EatON_Logo" height="150" width="150"></img>
+			<h3>Daily Requirement/Limit: </h3>
 			<li><label>
-				<font size="3">Age: </font><input type="number" id="Age" name="Age">
+				<font size="3">Calorie: </font><br><input type="number" step="1" min="0" id="RCal" name="RCal" placeholder="(Cal)" required><font size="3">Cal </font>
 			</label></li>
 			<li><label>
-				<font size="3">Height: </font><input type="number" id="Height" name="Height">
-				<select>
-					<option value="ft">ft.</option>
-					<option value="cm">cm.</option>
-				</select>
+				<font size="3">Carbohydrate: </font><br><input type="number" step="1" min="0" id="RCarb" name="RCarb" placeholder="(in percent)" required><font size="3">% </font>
 			</label></li>
 			<li><label>
-				<font size="3">Weight: </font><input type="number" id="Weight" name="Weight">
-				<select>
-					<option value="lb">Lb.</option>
-					<option value="kg">Kg.</option>
-				</select>
-			</label></li>
-			<h3>Macro-Nutrients: </h3>
-			<li><label>
-				<font size="3">Calorie: </font><input type="number" id="Cal" name="Cal">
+				<font size="3">Protein: </font><br><input type="number" step="1" min="0" id="RPro" name="RPro" placeholder="(in percent)" required><font size="3">% </font>
 			</label></li>
 			<li><label>
-				<font size="3">Carbohydrate: </font><input type="number" id="Carb" name="Carb">
+				<font size="3">Fat: </font><br><input type="number" step="1" min="0" id="RFat" name="RFat" placeholder="(in percent)" required><font size="3">% </font>
+			</label></li>
+			<h3>Consumed today: </h3>
+			<li><label>
+				<font size="3">Carbohydrate: </font><br><input type="number" step="1" min="0" id="CCarb" name="CCarb" placeholder="(grams)" required><font size="3">g </font>
 			</label></li>
 			<li><label>
-				<font size="3">Protein: </font><input type="number" id="Pro" name="Pro">
+				<font size="3">Protein: </font><br><input type="number" step="1" min="0" id="CPro" name="CPro" placeholder="(grams)" required><font size="3">g </font>
 			</label></li>
 			<li><label>
-				<font size="3">Fat: </font><input type="number" id="Fat" name="Fat">
+				<font size="3">Fat: </font><br><input type="number" step="1" min="0" id="CFat" name="CFat" placeholder="(grams)" required><font size="3">g </font>
+			</label></li>
+			<h3>What would you like to look for? </h3>
+			<li><label>
+				<font size="3">Search Term: </font><br><input type="text" id="Term" name="Term" maxlength="20" placeholder="(ex: chicken, kale, etc. )" required>
 			</label></li>
 			<br>
 			<button type="submit" form="EatON" value="Search">Search</button>
