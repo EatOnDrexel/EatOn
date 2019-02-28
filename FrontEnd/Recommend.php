@@ -14,7 +14,8 @@
 	//send to python script and get returned JSON values
 	//$output should contain the returned value from the python script
 	//exec("python newFunctions.py $Pro $Fat $Carb $Cal", $output); //this is the old one
-	exec("python newFunctions.py $Pro_Limit $Fat_Limit $Carb_Limit $Cal_Limit $Pro_Consumed $Fat_Consumed $Carb_Consumed $Search_Term", $output);
+
+	exec("python GenerateCall.py $Pro_Limit $Fat_Limit $Carb_Limit $Cal_Limit $Pro_Consumed $Fat_Consumed $Carb_Consumed $Search_Term", $output);
 	
 	//parse returned json values
 	print($output); //this here for now so that we know it works and return json values
