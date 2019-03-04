@@ -1,2 +1,0 @@
-# EatOn
-Senior Design Project
