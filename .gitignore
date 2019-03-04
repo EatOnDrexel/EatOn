@@ -1,0 +1,30 @@
+# ignore local PyCharm files
+.idea/
+
+# Ignore PyCharm cache
+eaton/backend/__pycache__
+
+# Ignore Mac metadata
+.DS_Store
+
+# Ignore all Python byte code
+*.pyc
+
+# Ignore Virtual Environments
+eaton/venv/
+
+# Ignore contents of /var on server not related to application
+lib
+mail
+run
+backups
+local
+opt
+snap
+cache
+spool
+crash
+log
+tmp
+lock
+
