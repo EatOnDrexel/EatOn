@@ -58,6 +58,8 @@ def main():
 
     r = requests.get(url=URL, params=PARAMS)
 
+    print(r.text)
+
     return r.text
 
 
