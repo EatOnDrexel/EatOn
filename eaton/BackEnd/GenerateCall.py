@@ -3,17 +3,17 @@ import requests
 import sys
 
 # Percentage of each macro required by user
-Protein_Desired = int(sys.argv[1] / 100)
-Fat_Desired = int(sys.argv[2] / 100)
-Carb_Desired = int(sys.argv[3] / 100)
+Protein_Desired = int(sys.argv[1])/100
+Fat_Desired = int(sys.argv[2])/100
+Carb_Desired = int(sys.argv[3])/100
 
 # Daily caloric limit of user
-Calories_Limit = sys.argv[4]
+Calories_Limit = int(sys.argv[4])
 
 # How many grams of each macro have been consumed that day
-Protein_Consumed_Grams = sys.argv[5]
-Fat_Consumed_Grams = sys.argv[6]
-Carb_Consumed_Grams = sys.argv[7]
+Protein_Consumed_Grams = int(sys.argv[5])
+Fat_Consumed_Grams = int(sys.argv[6])
+Carb_Consumed_Grams = int(sys.argv[7])
 
 # User's search term
 Search_Term = sys.argv[8]
