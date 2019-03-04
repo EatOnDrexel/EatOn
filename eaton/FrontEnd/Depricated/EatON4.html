@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<!--javascript here-->
+		<script>
+			alert("This is the version where we have inout on the left and then do the output on the right when calculated or searched. ");
+		</script>
+		<!--bootstrap here-->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+		<!--css here-->
+		<link rel="stylesheet" href="EatON.css">
+		<!--jquery here-->
+		<script src="jquery-3.3.1.min.js"></script>
+		<title>EatON</title>
+	</head>
+	<body>
+		<img src="EatON.png" alt="EatON_Logo" height="150" width="150"></img>
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-6">
+					<form id="EatON" name="EatON" action="EatON.html" method="get">
+						<h3>User Input: </h3>
+						<li><label>
+							<font size="3">Age: </font><input type="number" id="Age" name="Age">
+						</label></li>
+						<li><label>
+							<font size="3">Height: </font><input type="number" id="Height" name="Height">
+							<select>
+								<option value="ft">ft.</option>
+								<option value="cm">cm.</option>
+							</select>
+						</label></li>
+						<li><label>
+							<font size="3">Weight: </font><input type="number" id="Weight" name="Weight">
+							<select>
+								<option value="lb">Lb.</option>
+								<option value="kg">Kg.</option>
+							</select>
+						</label></li>
+						<h3>Macro-Nutrients: </h3>
+						<li><label>
+							<font size="3">Calorie: </font><input type="number" id="Cal" name="Cal">
+						</label></li>
+						<li><label>
+							<font size="3">Carbohydrate: </font><input type="number" id="Carb" name="Carb">
+						</label></li>
+						<li><label>
+							<font size="3">Protein: </font><input type="number" id="Pro" name="Pro">
+						</label></li>
+						<li><label>
+							<font size="3">Fat: </font><input type="number" id="Fat" name="Fat">
+						</label></li>
+						<br>
+						<button type="submit" form="EatON" value="Search">Search</button>
+					</form>
+				</div>
+				<div class="col-sm-6">
+					<!--Result or output HERE-->
+					<h3>Result: </h3>
+					<h3>Recipe Name: </h3>
+					<h3>Macro-Nutrients: </h3>
+						<li><label>
+							<font size="3">Calorie: </font>
+						</label></li>
+						<li><label>
+							<font size="3">Carbohydrate: </font>
+						</label></li>
+						<li><label>
+							<font size="3">Protein: </font>
+						</label></li>
+						<li><label>
+							<font size="3">Fat: </font>
+						</label></li>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
