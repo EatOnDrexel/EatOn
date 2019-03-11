@@ -56,6 +56,6 @@ PARAMS = (
 
 r = requests.get(url=URL, params=PARAMS)
 
-print(r.content)
+print (r.json())
 
 
