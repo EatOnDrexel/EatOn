@@ -1,6 +1,7 @@
 import config
 import requests
 import sys
+import json
 
 
 # Percentage of each macro required by user
@@ -56,6 +57,6 @@ PARAMS = (
 
 r = requests.get(url=URL, params=PARAMS)
 
-print (r.json())
+print (json.dumps(r.json()))
 
 

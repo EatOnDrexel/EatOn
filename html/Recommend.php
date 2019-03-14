@@ -16,7 +16,7 @@
 	//$output should contain the returned value from the python script
 	//exec("python newFunctions.py $Pro $Fat $Carb $Cal", $output); //this is the old one
 	//exec("sudo python3 /var/www/eaton/BackEnd/GenerateCall.py $Pro_Limit $Fat_Limit $Carb_Limit $Cal_Limit $Pro_Consumed $Fat_Consumed $Carb_Consumed $Search_Term", $output);
-	$returned = shell_exec("python3 /var/www/eaton/BackEnd/GenerateCall.py $Pro_Limit $Fat_Limit $Carb_Limit $Cal_Limit $Pro_Consumed $Fat_Consumed $Carb_Consumed $Search_Term");
+	$returned = exec("python3 /var/www/eaton/BackEnd/GenerateCall.py $Pro_Limit $Fat_Limit $Carb_Limit $Cal_Limit $Pro_Consumed $Fat_Consumed $Carb_Consumed $Search_Term");
 	$recipe = explode(',', $returned);
 
 	echo "<html>";
@@ -24,13 +24,12 @@
 	echo "</head>";
 	echo "<body>";
 	echo "<pre>";
-	/*echo "<script type=\"text/javascript\">
-		JSON.stringify($return);
-	</script>";
-	 */
+
 	//echo shell_exec("python3 /var/www/eaton/BackEnd/GenerateCall.py $Pro_Limit $Fat_Limit $Carb_Limit $Cal_Limit $Pro_Consumed $Fat_Consumed $Carb_Consumed $Search_Term");
-	echo $returned."<br>";
+
+	//echo $returned."<br>";
 	echo json_encode((json_decode($returned)), JSON_PRETTY_PRINT);
+	echo "test";
 	echo "</pre>";
 
 	echo "<br>";
