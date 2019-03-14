@@ -4,12 +4,14 @@
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
 		<!--css here-->
 		<link rel="stylesheet" href="EatON.css">
+		<!--Javascript here-->
+		<script src="EatON.js"></script>
 		<!--jquery here-->
 		<script src="jquery-3.3.1.min.js"></script>
 		<title>EatON</title>
 	</head>
 	<body>
-		<form id="EatON" name="EatON" action="Recommend.php" method="POST">
+		<form id="EatON" name="EatON" action="Recommend.php" method="POST" onsubmit="return checkForm()">
 			<!--<h1>EatON</h1>-->
 			<img src="..\EatON.png" alt="EatON_Logo" height="150" width="150"></img>
 			<h3>Daily Requirement/Limit: </h3>
