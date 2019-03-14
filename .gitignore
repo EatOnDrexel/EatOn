@@ -12,4 +12,5 @@ eaton/backend/__pycache__
 
 # Ignore Virtual Environments
 eaton/venv/
+/venv
 
