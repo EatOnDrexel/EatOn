@@ -64,7 +64,7 @@
 		}
 	}
 	
-		function checkifempty()
+	function checkifempty()
 	{
 	if (count($recipes['hits']) == 0)
 		{
@@ -77,7 +77,7 @@
 		}
 	}
 	
-
+	echo count($recipes['hits']);
 	checkifempty();
 	//echo json_encode((json_decode($returned)), JSON_PRETTY_PRINT);
 
