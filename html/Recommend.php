@@ -79,7 +79,6 @@
  
 	foreach ($hits as $hit)
 	{
- 
     	$recipe = $hit['recipe'];
  
     	echo "\r\nRecipe: {$recipe['label']}";
@@ -93,15 +92,6 @@
     		{
     			echo NL . TAB . TAB . $nutrient['label'] . " " . $nutrient['unit'] . ":" . $nutrient['quantity'];
     		}
-        	
-    	}
- 
-    	echo NL;
- 
-    	echo NL . TAB . "Nutrients:";
-    	foreach ($recipe['totalDaily'] as $nutrient)
-    	{
-        	echo NL . TAB . TAB . $nutrient['label'] . " " . $nutrient['quantity'] . " " . $nutrient['unit'];
     	}
 	}
 
