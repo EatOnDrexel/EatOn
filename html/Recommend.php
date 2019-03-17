@@ -18,6 +18,10 @@
 	//converts output into a php array
 	$recipes = json_decode($returned, TRUE);
 	$desiredinfo = array('label', 'image', 'shareAs');
+	$recipesData = json_decode($returned, true);
+
+	define("TAB", "    ");
+	define("NL", "\r\n");
 
 	echo "<html>";
 	echo "<head>";
@@ -71,36 +75,30 @@
 
 */
 
-	define("TAB", "    ");
-	define("NL", "\r\n");
- 
-	$recipesJson = $returned;
- 
-	$recipesData = json_decode($recipesJson, true);
- 
+
 	$hits = $recipesData['hits'];
  
-	foreach ($hits as $hit) {
+	foreach ($hits as $hit)
+	{
  
     	$recipe = $hit['recipe'];
  
-    echo "\r\nRecipe: {$recipe['label']}";
+    	echo "\r\nRecipe: {$recipe['label']}";
  
-    echo NL . TAB . "Nutrients:";
-    foreach ($recipe['totalNutrients'] as $nutrient) {
-        echo NL . TAB . TAB . $nutrient['label'] . " " . $nutrient['unit'] . ":" . $nutrient['quantity'];
-    }
+    	echo NL . TAB . "Nutrients:";
+    	foreach ($recipe['totalNutrients'] as $nutrient)
+    	{
+        	echo NL . TAB . TAB . $nutrient['label'] . " " . $nutrient['unit'] . ":" . $nutrient['quantity'];
+    	}
  
-    echo NL;
+    	echo NL;
  
-    echo NL . TAB . "Nutrients:";
-    foreach ($recipe['totalDaily'] as $nutrient) {
-        echo NL . TAB . TAB . $nutrient['label'] . " " . $nutrient['quantity'] . " " . $nutrient['unit'];
-    }
-}
-
-
-
+    	echo NL . TAB . "Nutrients:";
+    	foreach ($recipe['totalDaily'] as $nutrient)
+    	{
+        	echo NL . TAB . TAB . $nutrient['label'] . " " . $nutrient['quantity'] . " " . $nutrient['unit'];
+    	}
+	}
 
 	echo "</pre>";
 
