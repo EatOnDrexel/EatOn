@@ -50,7 +50,7 @@
 	{
 		foreach ($info as $i => $values)
 		{
-			if is_array($values)
+			if (is_array($values))
 			{
 				printinfo($values);
 			}
