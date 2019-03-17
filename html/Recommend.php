@@ -82,8 +82,8 @@
     	$recipe = $hit['recipe'];
  
     	echo "\r\nRecipe: {$recipe['label']}";
-    	echo "\r\nRecipe: {$recipe['image']}";
-    	echo "\r\nRecipe: {$recipe['shareAs']}";
+    	echo "\r\nPut Image HTML Here: {$recipe['image']}";
+    	echo "\r\nLink: {$recipe['shareAs']}";
  
     	echo NL . TAB . "Nutrients:";
     	foreach ($recipe['totalNutrients'] as $nutrient)
