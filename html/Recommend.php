@@ -25,6 +25,7 @@
 	echo "<body>";
 	echo "<pre>";
 
+/*
 	function printinfo($info)
 	{
 		global $desiredinfo;
@@ -67,6 +68,39 @@
 	
 	checkifempty($recipes['hits']);
 	//echo json_encode((json_decode($returned)), JSON_PRETTY_PRINT);
+
+*/
+
+	define("TAB", "    ");
+	define("NL", "\r\n");
+ 
+	$recipesJson = $returned;
+ 
+	$recipesData = json_decode($recipesJson, true);
+ 
+	$hits = $recipesData['hits'];
+ 
+	foreach ($hits as $hit) {
+ 
+    	$recipe = $hit['recipe'];
+ 
+    echo "\r\nRecipe: {$recipe['label']}";
+ 
+    echo NL . TAB . "Nutrients:";
+    foreach ($recipe['totalNutrients'] as $nutrient) {
+        echo NL . TAB . TAB . $nutrient['label'] . " " . $nutrient['unit'] . ":" . $nutrient['quantity'];
+    }
+ 
+    echo NL;
+ 
+    echo NL . TAB . "Nutrients:";
+    foreach ($recipe['totalDaily'] as $nutrient) {
+        echo NL . TAB . TAB . $nutrient['label'] . " " . $nutrient['quantity'] . " " . $nutrient['unit'];
+    }
+}
+
+
+
 
 	echo "</pre>";
 
