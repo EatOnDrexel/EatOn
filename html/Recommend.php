@@ -39,7 +39,7 @@
 			//if the value is not an array, print out the key value pair
 			else
 			{
-				if (in_array($i, $desiredinfo)
+				if (in_array($i, $desiredinfo))
 				{
 					echo $i . ': ' . $values . '<br>';
 				}
