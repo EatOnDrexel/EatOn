@@ -50,10 +50,12 @@
 	{
 		foreach ($info as $i => $values)
 		{
+			//if the value in the array is another array, recurse
 			if (is_array($values))
 			{
 				printinfo($values);
 			}
+			//if the value is not an array, print out the key value pair
 			else
 			{
 				echo $i . ':' . $values . '<br>';
@@ -62,7 +64,7 @@
 		}
 	}
 	
-
+	//calls above function to print out data
 	printinfo($recipes['hits']);
 	//echo json_encode((json_decode($returned)), JSON_PRETTY_PRINT);
 
