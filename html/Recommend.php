@@ -92,6 +92,7 @@
     		{
     			echo NL . TAB . TAB . $nutrient['label'] . " " . $nutrient['unit'] . ":" . $nutrient['quantity'];
     		}
+    		echo NL . NL;
     	}
 	}
 
