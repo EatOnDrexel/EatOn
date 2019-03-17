@@ -48,7 +48,7 @@
 
 	function printinfo($info)
 	{
-		if (count($recipes['hits']) == 0)
+		if (!isset($recipes['hits']))
 		{
 			echo "No results";
 		}
