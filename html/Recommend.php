@@ -15,15 +15,16 @@
 	//send to python script and get returned JSON values
 	$returned = exec("python3 /var/www/eaton/BackEnd/GenerateCall.py $Pro_Limit $Fat_Limit $Carb_Limit $Cal_Limit $Pro_Consumed $Fat_Consumed $Carb_Consumed $Search_Term");
 
+	//converts output into a php array
+	$recipes = json_decode($returned, TRUE);
+
 	echo "<html>";
 	echo "<head>";
 	echo "</head>";
 	echo "<body>";
 	echo "<pre>";
 
-	//converts output into a php array
-	$recipes = json_decode($returned, TRUE);
-
+	/*
 	//loops over the layer containing hits. Seems redundant but it works.
 	foreach ($recipes['hits'] as $i => $values)
 	{
@@ -43,7 +44,26 @@
 		echo $key . ':' . $value . '<br>';
 		}
 	}
+	*/
 
+	function printinfo($info)
+	{
+		foreach ($info) as $i => $values);
+		{
+			if is_array($values)
+			{
+				printinfo($values);
+			}
+			else
+			{
+				echo $i . ':' . $values . '<br>';
+			}
+
+		}
+	}
+	
+
+	printinfo($recipes['hits']);
 	//echo json_encode((json_decode($returned)), JSON_PRETTY_PRINT);
 
 	echo "</pre>";
