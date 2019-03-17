@@ -48,20 +48,28 @@
 
 	function printinfo($info)
 	{
-		foreach ($info as $i => $values)
+		if (count($recipes['hits']))
 		{
+			echo "No results";
+		}
+		else
+		{
+			foreach ($info as $i => $values)
+			{
 			//if the value in the array is another array, recurse
 			if (is_array($values))
-			{
+				{
 				printinfo($values);
-			}
+				}
 			//if the value is not an array, print out the key value pair
 			else
-			{
+				{
 				echo $i . ':' . $values . '<br>';
-			}
+				}
 
+			}
 		}
+		
 	}
 	
 	//calls above function to print out data
