@@ -17,6 +17,7 @@
 
 	//converts output into a php array
 	$recipes = json_decode($returned, TRUE);
+	$desiredinfo = array('label', 'image', 'shareAs');
 
 	echo "<html>";
 	echo "<head>";
@@ -26,6 +27,8 @@
 
 	function printinfo($info)
 	{
+		global $desiredinfo;
+
 		foreach ($info as $i => $values)
 		{
 			//if the value in the array is another array, recurse
@@ -36,7 +39,11 @@
 			//if the value is not an array, print out the key value pair
 			else
 			{
-				echo $i . ':' . $values . '<br>';
+				if (in_array($i), $desiredinfo)
+				{
+					echo $i . ': ' . $values . '<br>';
+				}
+				//echo $i . ':' . $values . '<br>';
 			}
 
 		}
