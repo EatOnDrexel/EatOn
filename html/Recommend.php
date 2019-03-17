@@ -45,10 +45,11 @@
 		}
 	}
 	*/
-
+	echo count($recipes['hits']);
+	
 	function printinfo($info)
 	{
-		if (empty($recipes['hits']))
+		if (count($recipes['hits']) == 0)
 		{
 			echo "No results";
 		}
