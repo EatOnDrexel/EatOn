@@ -45,36 +45,40 @@
 		}
 	}
 	*/
-	echo count($recipes['hits']);
-	
+
 	function printinfo($info)
 	{
-		if (count($recipes['hits']) == 0)
+		foreach ($info as $i => $values)
 		{
-			echo "No results";
-		}
-		else
-		{
-			foreach ($info as $i => $values)
+		//if the value in the array is another array, recurse
+		if (is_array($values))
 			{
-			//if the value in the array is another array, recurse
-			if (is_array($values))
-				{
-				printinfo($values);
-				}
-			//if the value is not an array, print out the key value pair
-			else
-				{
-				echo $i . ':' . $values . '<br>';
-				}
-
+			printinfo($values);
 			}
+		//if the value is not an array, print out the key value pair
+		else
+			{
+			echo $i . ':' . $values . '<br>';
+			}
+
 		}
-		
 	}
 	
-	//calls above function to print out data
-	printinfo($recipes['hits']);
+		function checkifempty()
+	{
+	if (count($recipes['hits']) == 0)
+		{
+		echo "No results";
+		}
+	else
+		{
+		//calls above function to print out data
+		printinfo($recipes['hits']);
+		}
+	}
+	
+
+	checkifempty();
 	//echo json_encode((json_decode($returned)), JSON_PRETTY_PRINT);
 
 	echo "</pre>";
