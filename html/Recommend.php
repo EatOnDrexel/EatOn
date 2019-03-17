@@ -24,41 +24,19 @@
 	echo "<body>";
 	echo "<pre>";
 
-	/*
-	//loops over the layer containing hits. Seems redundant but it works.
-	foreach ($recipes['hits'] as $i => $values)
-	{
-	//loops over the layer containing recipes.
-	foreach ($values as $key => $value)
-		{
-		//loops over the layer containing url, label, etc.
-		foreach ($value as $tags => $taginfo)
-			{
-			//echoes out tags on this layer
-			echo $tags . ':' . $taginfo . '<br>';
-			foreach ($taginfo as $nestkey => $nestvalue)
-				{
-				echo $nestkey . ':' . $nestvalue . '<br>';
-				}
-			}
-		echo $key . ':' . $value . '<br>';
-		}
-	}
-	*/
-
 	function printinfo($info)
 	{
 		foreach ($info as $i => $values)
 		{
-		//if the value in the array is another array, recurse
-		if (is_array($values))
+			//if the value in the array is another array, recurse
+			if (is_array($values))
 			{
-			printinfo($values);
+				printinfo($values);
 			}
-		//if the value is not an array, print out the key value pair
-		else
+			//if the value is not an array, print out the key value pair
+			else
 			{
-			echo $i . ':' . $values . '<br>';
+				echo $i . ':' . $values . '<br>';
 			}
 
 		}
@@ -66,20 +44,20 @@
 	
 	function checkifempty($info)
 	{
-		$testhits = array_filter($info);
-
-	if (empty($testhits))
+		$filteredhits = array_filter($info);
+		//checks to see if there are no results
+		if (empty($filteredhits))
 		{
-		echo "No results";
+			echo "No results";
 		}
-	else
+		//if there are results, call the printinfo function
+		else
 		{
-		//calls above function to print out data
-		printinfo($info);
+			//calls above function to print out data
+			printinfo($info);
 		}
 	}
 	
-	echo count($recipes['hits']);
 	checkifempty($recipes['hits']);
 	//echo json_encode((json_decode($returned)), JSON_PRETTY_PRINT);
 
