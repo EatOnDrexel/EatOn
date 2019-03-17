@@ -16,7 +16,6 @@
 	$returned = exec("python3 /var/www/eaton/BackEnd/GenerateCall.py $Pro_Limit $Fat_Limit $Carb_Limit $Cal_Limit $Pro_Consumed $Fat_Consumed $Carb_Consumed $Search_Term");
 
 	//converts output into a php array
-	$recipes = json_decode($returned, TRUE);
 	$desiredinfo = array('label', 'image', 'shareAs');
 	$recipesData = json_decode($returned, true);
 
@@ -70,7 +69,7 @@
 		}
 	}
 	
-	checkifempty($recipes['hits']);
+	checkifempty($recipesData['hits']);
 	//echo json_encode((json_decode($returned)), JSON_PRETTY_PRINT);
 
 */
@@ -84,11 +83,17 @@
     	$recipe = $hit['recipe'];
  
     	echo "\r\nRecipe: {$recipe['label']}";
+    	echo "\r\nRecipe: {$recipe['image']}";
+    	echo "\r\nRecipe: {$recipe['shareAs']}";
  
     	echo NL . TAB . "Nutrients:";
     	foreach ($recipe['totalNutrients'] as $nutrient)
     	{
-        	echo NL . TAB . TAB . $nutrient['label'] . " " . $nutrient['unit'] . ":" . $nutrient['quantity'];
+    		if ($nutrient['label'] === "Fat" || $nutrient['label'] === "Carbs" || $nutrient['label'] === "Protein")
+    		{
+    			echo NL . TAB . TAB . $nutrient['label'] . " " . $nutrient['unit'] . ":" . $nutrient['quantity'];
+    		}
+        	
     	}
  
     	echo NL;
