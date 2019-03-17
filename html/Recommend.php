@@ -48,7 +48,7 @@
 
 	function printinfo($info)
 	{
-		if (!isset($recipes['hits']))
+		if (!in_array('hits', $recipes))
 		{
 			echo "No results";
 		}
