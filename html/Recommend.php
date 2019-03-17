@@ -66,7 +66,9 @@
 	
 	function checkifempty()
 	{
-	if (count($recipes['hits']) == 0)
+		$testhits = array_filter($recipes['hits']);
+
+	if (empty($testhits))
 		{
 		echo "No results";
 		}
