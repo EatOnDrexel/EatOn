@@ -64,9 +64,9 @@
 		}
 	}
 	
-	function checkifempty()
+	function checkifempty($info)
 	{
-		$testhits = array_filter($recipes['hits']);
+		$testhits = array_filter($info);
 
 	if (empty($testhits))
 		{
@@ -75,12 +75,12 @@
 	else
 		{
 		//calls above function to print out data
-		printinfo($recipes['hits']);
+		printinfo($info);
 		}
 	}
 	
 	echo count($recipes['hits']);
-	checkifempty();
+	checkifempty($recipes['hits']);
 	//echo json_encode((json_decode($returned)), JSON_PRETTY_PRINT);
 
 	echo "</pre>";
