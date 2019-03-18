@@ -17,6 +17,7 @@
 	//converts output into a php array
 	$desiredinfo = array('label', 'image', 'shareAs');
 	$recipesData = json_decode($returned, true);
+	$hits = $recipesData['hits'];
 
 	define("TAB", "    ");
 	define("NL", "\r\n");
@@ -27,33 +28,59 @@
 	echo "<body>";
 	//echo "<pre>";
 
-/*
-	function printinfo($info)
+	function printinfo()
 	{
-		global $desiredinfo;
-
-		foreach ($info as $i => $values)
+		global $recipesData;
+		global $hits;
+ 
+		foreach ($hits as $hit)
 		{
-			//if the value in the array is another array, recurse
-			if (is_array($values))
+			$recipe = $hit['recipe'];
+		
+			echo "<b>Recipe: </b><a href='".$recipe['shareAs']."'>".$recipe['label']."</a><br>";
+			//echo '<b>Recipe: </b><a href="'.$recipe['label'].'">'.$recipe['label'].'</a>';
+			echo "<a href='".$recipe['shareAs']."'><img src='".$recipe['image']."' alt='Recipe_Img'></a><br>";
+			//echo "<b>Link: </b>{$recipe['shareAs']}<br>";
+			echo "&emsp;<b>Servings: </b>{$recipe['yield']}<br>";
+			echo "&emsp;<b>Total Nutrients: </b><br>";
+			foreach ($recipe['totalNutrients'] as $nutrient)
 			{
-				printinfo($values);
+				if ($nutrient['label'] === "Fat" || $nutrient['label'] === "Carbs" || $nutrient['label'] === "Protein")
+				{
+					echo "&emsp;&emsp;" . $nutrient['label'] . ": " . $nutrient['quantity'] . $nutrient['unit'] . "<br>";
+				}
 			}
-			//if the value is not an array, print out the key value pair
+			echo "&emsp;&emsp;Calories: " . $recipe['calories'] . "kcal<br>";
+			echo "&emsp;<b>Nutrients per serving: </b><br>";
+			foreach ($recipe['totalNutrients'] as $nutrient)
+			{
+				if ($nutrient['label'] === "Fat" || $nutrient['label'] === "Carbs" || $nutrient['label'] === "Protein")
+				{
+					if ($recipe['yield'] > 1)
+					{
+						$div = floatval($nutrient['quantity'])/intval($recipe['yield']);
+					}
+					echo "&emsp;&emsp;" . $nutrient['label'] . ": " . $div . $nutrient['unit'] . "<br>";
+				}
+			}
+			if ($recipe['yield'] > 1)
+			{
+				echo "&emsp;&emsp;Calories: " . (floatval($recipe['calories'])/intval($recipe['yield'])) . "kcal<br>";
+			}
 			else
 			{
-				if (in_array($i, $desiredinfo))
-				{
-					echo $i . ': ' . $values . '<br>';
-				}
-				//echo $i . ':' . $values . '<br>';
+				echo "&emsp;&emsp;Calories: " . $recipe['calories'] . "kcal<br>";
 			}
-
+			//echo NL . NL;
+			echo "<br><br>";
 		}
 	}
-	
-	function checkifempty($info)
+
+
+	function checkifempty()
 	{
+		global $hits;
+
 		$filteredhits = array_filter($info);
 		//checks to see if there are no results
 		if (empty($filteredhits))
@@ -67,70 +94,8 @@
 			printinfo($info);
 		}
 	}
-	
-	checkifempty($recipesData['hits']);
-	//echo json_encode((json_decode($returned)), JSON_PRETTY_PRINT);
 
-*/	
-
-
-	$hits = $recipesData['hits'];
- 
-	foreach ($hits as $hit)
-	{
-		$recipe = $hit['recipe'];
-		
-		/*echo "\r\nRecipe: {$recipe['label']}";
-		echo "\r\nPut Image HTML Here: {$recipe['image']}";
-		echo "\r\nLink: {$recipe['shareAs']}";
-		
-		echo NL . TAB . "Nutrients:";
-		foreach ($recipe['totalNutrients'] as $nutrient)
-		{
-			if ($nutrient['label'] === "Fat" || $nutrient['label'] === "Carbs" || $nutrient['label'] === "Protein")
-			{
-				echo NL . TAB . TAB . $nutrient['label'] . " " . ":" . $nutrient['quantity'] . $nutrient['unit'];
-			}
-		}
-		echo NL . NL;*/
-		
-		echo "<b>Recipe: </b><a href='".$recipe['shareAs']."'>".$recipe['label']."</a><br>";
-		//echo '<b>Recipe: </b><a href="'.$recipe['label'].'">'.$recipe['label'].'</a>';
-		echo "<a href='".$recipe['shareAs']."'><img src='".$recipe['image']."' alt='Recipe_Img'></a><br>";
-		//echo "<b>Link: </b>{$recipe['shareAs']}<br>";
-		echo "&emsp;<b>Servings: </b>{$recipe['yield']}<br>";
-		echo "&emsp;<b>Total Nutrients: </b><br>";
-		foreach ($recipe['totalNutrients'] as $nutrient)
-		{
-			if ($nutrient['label'] === "Fat" || $nutrient['label'] === "Carbs" || $nutrient['label'] === "Protein")
-			{
-				echo "&emsp;&emsp;" . $nutrient['label'] . ": " . $nutrient['quantity'] . $nutrient['unit'] . "<br>";
-			}
-		}
-		echo "&emsp;&emsp;Calories: " . $recipe['calories'] . "kcal<br>";
-		echo "&emsp;<b>Nutrients per serving: </b><br>";
-		foreach ($recipe['totalNutrients'] as $nutrient)
-		{
-			if ($nutrient['label'] === "Fat" || $nutrient['label'] === "Carbs" || $nutrient['label'] === "Protein")
-			{
-				if ($recipe['yield'] > 1)
-				{
-					$div = floatval($nutrient['quantity'])/intval($recipe['yield']);
-				}
-				echo "&emsp;&emsp;" . $nutrient['label'] . ": " . $div . $nutrient['unit'] . "<br>";
-			}
-		}
-		if ($recipe['yield'] > 1)
-		{
-			echo "&emsp;&emsp;Calories: " . (floatval($recipe['calories'])/intval($recipe['yield'])) . "kcal<br>";
-		}
-		else
-		{
-			echo "&emsp;&emsp;Calories: " . $recipe['calories'] . "kcal<br>";
-		}
-		//echo NL . NL;
-		echo "<br><br>";
-	}
+	checkifempty();
 
 	//echo "</pre>";
 
