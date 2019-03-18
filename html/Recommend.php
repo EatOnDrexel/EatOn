@@ -15,7 +15,6 @@
 	$returned = exec("python3 /var/www/eaton/BackEnd/GenerateCall.py $Pro_Limit $Fat_Limit $Carb_Limit $Cal_Limit $Pro_Consumed $Fat_Consumed $Carb_Consumed $Search_Term");
 
 	//converts output into a php array
-	$desiredinfo = array('label', 'image', 'shareAs');
 	$recipesData = json_decode($returned, true);
 	$hits = $recipesData['hits'];
 
@@ -37,10 +36,10 @@
 		{
 			$recipe = $hit['recipe'];
 		
-			echo "<b>Recipe: </b><a href='".$recipe['shareAs']."'>".$recipe['label']."</a><br>";
+			echo "<b>Recipe: </b><a href='".$recipe['url']."'>".$recipe['label']."</a><br>";
 			//echo '<b>Recipe: </b><a href="'.$recipe['label'].'">'.$recipe['label'].'</a>';
-			echo "<a href='".$recipe['shareAs']."'><img src='".$recipe['image']."' alt='Recipe_Img'></a><br>";
-			//echo "<b>Link: </b>{$recipe['shareAs']}<br>";
+			echo "<a href='".$recipe['url']."'><img src='".$recipe['image']."' alt='Recipe_Img'></a><br>";
+			//echo "<b>Link: </b>{$recipe['url']}<br>";
 			echo "&emsp;<b>Servings: </b>{$recipe['yield']}<br>";
 			echo "&emsp;<b>Total Nutrients: </b><br>";
 			foreach ($recipe['totalNutrients'] as $nutrient)
