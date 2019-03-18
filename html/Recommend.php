@@ -81,7 +81,7 @@
 	{
 		global $hits;
 
-		$filteredhits = array_filter($info);
+		$filteredhits = array_filter($hits);
 		//checks to see if there are no results
 		if (empty($filteredhits))
 		{
@@ -91,7 +91,7 @@
 		else
 		{
 			//calls above function to print out data
-			printinfo($info);
+			printinfo();
 		}
 	}
 
