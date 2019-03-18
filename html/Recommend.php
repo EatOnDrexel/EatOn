@@ -1,5 +1,4 @@
 <?php
-
 	//grab input values from the form on EatON2.html
 	$Cal_Limit = $_POST['RCal'];
 	$Carb_Limit = $_POST['RCarb'];
@@ -26,7 +25,7 @@
 	echo "<head>";
 	echo "</head>";
 	echo "<body>";
-	echo "<pre>";
+	//echo "<pre>";
 
 /*
 	function printinfo($info)
@@ -72,31 +71,47 @@
 	checkifempty($recipesData['hits']);
 	//echo json_encode((json_decode($returned)), JSON_PRETTY_PRINT);
 
-*/
+*/	
 
 
 	$hits = $recipesData['hits'];
  
 	foreach ($hits as $hit)
 	{
-    	$recipe = $hit['recipe'];
- 
-    	echo "\r\nRecipe: {$recipe['label']}";
-    	echo "\r\nPut Image HTML Here: {$recipe['image']}";
-    	echo "\r\nLink: {$recipe['shareAs']}";
- 
-    	echo NL . TAB . "Nutrients:";
-    	foreach ($recipe['totalNutrients'] as $nutrient)
-    	{
-    		if ($nutrient['label'] === "Fat" || $nutrient['label'] === "Carbs" || $nutrient['label'] === "Protein")
-    		{
-    			echo NL . TAB . TAB . $nutrient['label'] . " " . $nutrient['unit'] . ":" . $nutrient['quantity'];
-    		}
-    	}
-    	echo NL . NL;
+		$recipe = $hit['recipe'];
+		
+		/*echo "\r\nRecipe: {$recipe['label']}";
+		echo "\r\nPut Image HTML Here: {$recipe['image']}";
+		echo "\r\nLink: {$recipe['shareAs']}";
+		
+		echo NL . TAB . "Nutrients:";
+		foreach ($recipe['totalNutrients'] as $nutrient)
+		{
+			if ($nutrient['label'] === "Fat" || $nutrient['label'] === "Carbs" || $nutrient['label'] === "Protein")
+			{
+				echo NL . TAB . TAB . $nutrient['label'] . " " . ":" . $nutrient['quantity'] . $nutrient['unit'];
+			}
+		}
+		echo NL . NL;*/
+		
+		echo "<b>Recipe: </b><a href='".$recipe['shareAs']."'>".$recipe['label']."</a><br>";
+		//echo '<b>Recipe: </b><a href="'.$recipe['label'].'">'.$recipe['label'].'</a>';
+		echo "<a href='".$recipe['shareAs']."'><img src='".$recipe['image']."' alt='Recipe_Img'></a><br>";
+		//echo "<b>Link: </b>{$recipe['shareAs']}<br>";
+		
+		echo "&emsp;<b>Nutrients: </b><br>";
+		foreach ($recipe['totalNutrients'] as $nutrient)
+		{
+			if ($nutrient['label'] === "Fat" || $nutrient['label'] === "Carbs" || $nutrient['label'] === "Protein")
+			{
+				echo "&emsp;&emsp;" . $nutrient['label'] . ": " . $nutrient['quantity'] . $nutrient['unit'] . "<br>";
+			}
+		}
+		//echo NL . NL;
+		echo "<br><br>";
 	}
 
-	echo "</pre>";
+	//echo "</pre>";
 
 	echo "<br>";
 	echo "</body>";
