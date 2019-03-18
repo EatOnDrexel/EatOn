@@ -46,10 +46,10 @@
 			{
 				if ($nutrient['label'] === "Fat" || $nutrient['label'] === "Carbs" || $nutrient['label'] === "Protein")
 				{
-					echo "&emsp;&emsp;" . $nutrient['label'] . ": " . $nutrient['quantity'] . $nutrient['unit'] . "<br>";
+					echo "&emsp;&emsp;" . $nutrient['label'] . ": " . round(floatval($nutrient['quantity']),2) . $nutrient['unit'] . "<br>";
 				}
 			}
-			echo "&emsp;&emsp;Calories: " . $recipe['calories'] . "kcal<br>";
+			echo "&emsp;&emsp;Calories: " . round(floatval($recipe['calories']),2) . "kcal<br>";
 			echo "&emsp;<b>Nutrients per serving: </b><br>";
 			foreach ($recipe['totalNutrients'] as $nutrient)
 			{
@@ -59,16 +59,16 @@
 					{
 						$div = floatval($nutrient['quantity'])/intval($recipe['yield']);
 					}
-					echo "&emsp;&emsp;" . $nutrient['label'] . ": " . $div . $nutrient['unit'] . "<br>";
+					echo "&emsp;&emsp;" . $nutrient['label'] . ": " . round($div,2) . $nutrient['unit'] . "<br>";
 				}
 			}
 			if ($recipe['yield'] > 1)
 			{
-				echo "&emsp;&emsp;Calories: " . (floatval($recipe['calories'])/intval($recipe['yield'])) . "kcal<br>";
+				echo "&emsp;&emsp;Calories: " . round(floatval($recipe['calories'])/intval($recipe['yield']),2) . "kcal<br>";
 			}
 			else
 			{
-				echo "&emsp;&emsp;Calories: " . $recipe['calories'] . "kcal<br>";
+				echo "&emsp;&emsp;Calories: " . round(floatval($recipe['calories']),2) . "kcal<br>";
 			}
 			//echo NL . NL;
 			echo "<br><br>";
