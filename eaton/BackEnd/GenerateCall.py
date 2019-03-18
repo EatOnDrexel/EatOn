@@ -32,9 +32,21 @@ Fat_Limit = (Calories_Limit * Fat_Desired) / 9
 Carbs_Limit = (Calories_Limit * Carb_Desired) / 4
 
 # Calculate how many grams the user has left of each macro
-Protein_Remaining_Grams = Protein_Limit - Protein_Consumed_Grams
-Fat_Remaining_Grams = Fat_Limit - Fat_Consumed_Grams
-Carb_Remaining_Grams = Carbs_Limit - Carb_Consumed_Grams
+if Protein_Consumed_Grams > Protein_Limit:
+	Protein_Remaining_Grams = 0
+else:
+	Protein_Remaining_Grams = Protein_Limit - Protein_Consumed_Grams
+
+if Fat_Consumed_Grams > Fat_Limit:
+	Fat_Remaining_Grams = 0
+else:
+	Fat_Remaining_Grams = Fat_Limit - Fat_Consumed_Grams
+
+if Carb_Consumed_Grams > Carbs_Limit:
+	Carb_Remaining_Grams = 0
+else:
+	Carb_Remaining_Grams = Carbs_Limit - Carb_Consumed_Grams
+
 
 # Calculate how many calories have been consumed and how many are left for the day
 Calories_Consumed = (Pro_Consumed_Cals + Fat_Consumed_Cals + Carbs_Consumed_Cals)
@@ -50,9 +62,9 @@ PARAMS = (
     ('from', '0'),
     ('to', str(config.number_of_results)),
     ('calories', str(int(Calories_Remaining * .5)) + "-" + str(Calories_Remaining)),
-    ('nutrients[PROCNT]', str(int(Protein_Remaining_Grams * .9)) + "-" + str(int(Protein_Remaining_Grams))),
-    ('nutrients[FAT]', str(int(Fat_Remaining_Grams * .9)) + "-" + str(int(Fat_Remaining_Grams))),
-    ('nutrients[CHOCDF]', str(int(Carb_Remaining_Grams * .9)) + "-" + str(int(Carb_Remaining_Grams))),
+    ('nutrients[PROCNT]', str(int(Protein_Remaining_Grams * .75)) + "-" + str(int(Protein_Remaining_Grams))),
+    ('nutrients[FAT]', str(int(Fat_Remaining_Grams * .75)) + "-" + str(int(Fat_Remaining_Grams))),
+    ('nutrients[CHOCDF]', str(int(Carb_Remaining_Grams * .75)) + "-" + str(int(Carb_Remaining_Grams))),
 )
 
 r = requests.get(url=URL, params=PARAMS)
