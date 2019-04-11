@@ -77,7 +77,7 @@
 					}
 					else
 					{
-						echo "&emsp;&emsp;" . "Protein Remaining: " . (Pro_Limit - round($div,2)) . $nutrient['unit'] . "<br>";
+						echo "&emsp;&emsp;" . "Protein Remaining: " . ($Pro_Limit - round($div,2)) . $nutrient['unit'] . "<br>";
 					}
 
 
