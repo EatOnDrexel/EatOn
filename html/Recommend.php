@@ -31,6 +31,11 @@
 	{
 		global $recipesData;
 		global $hits;
+
+		global $Cal_Limit;
+		global $Carb_Limit;
+		global $Pro_Limit;
+		global $Fat_Limit;
  
 		foreach ($hits as $hit)
 		{
@@ -60,6 +65,22 @@
 						$div = floatval($nutrient['quantity'])/intval($recipe['yield']);
 					}
 					echo "&emsp;&emsp;" . $nutrient['label'] . ": " . round($div,2) . $nutrient['unit'] . "<br>";
+
+
+					if ($nutrient['label'] === "Fat")
+					{
+						echo "&emsp;&emsp;" . "Fat Remaining: " . ($Fat_Limit - round($div,2)) . $nutrient['unit'] . "<br>";
+					}
+					elseif ($nutrient['label'] === "Carbs")
+					{
+						echo "&emsp;&emsp;" . "Carbs Remaining: " . ($Carb_Limit - round($div,2)) . $nutrient['unit'] . "<br>";
+					}
+					else
+					{
+						echo "&emsp;&emsp;" . "Protein Remaining: " . (Pro_Limit - round($div,2)) . $nutrient['unit'] . "<br>";
+					}
+
+
 				}
 			}
 			if ($recipe['yield'] > 1)
