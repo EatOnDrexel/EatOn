@@ -11,6 +11,11 @@
 
 	$Search_Term = $_POST['Term'];
 
+	//Find out how many grams of each macro user needs. This is done in Python but needs done again here (for now)
+	$Carb_MaxGrams = (($Cal_Limit * $Carb_Limit) / 4);
+	$Pro_MaxGrams = (($Cal_Limit * $Pro_Limit) / 4);
+	$Fat_MaxGrams = (($Cal_Limit * $Fat_Limit) / 9);
+
 	//send to python script and get returned JSON values
 	$returned = exec("python3 /var/www/eaton/BackEnd/GenerateCall.py $Pro_Limit $Fat_Limit $Carb_Limit $Cal_Limit $Pro_Consumed $Fat_Consumed $Carb_Consumed $Search_Term");
 
@@ -33,9 +38,9 @@
 		global $hits;
 
 		global $Cal_Limit;
-		global $Carb_Limit;
-		global $Pro_Limit;
-		global $Fat_Limit;
+		global $Carb_MaxGrams;
+		global $Pro_MaxGrams;
+		global $Fat_MaxGrams;
  
 		foreach ($hits as $hit)
 		{
@@ -69,15 +74,15 @@
 
 					if ($nutrient['label'] === "Fat")
 					{
-						echo "&emsp;&emsp;" . "Fat Remaining: " . round(($Fat_Limit - $div),2) . $nutrient['unit'] . "<br>";
+						echo "&emsp;&emsp;" . "Fat Remaining: " . round(($Fat_MaxGrams - $div),2) . $nutrient['unit'] . "<br>";
 					}
 					elseif ($nutrient['label'] === "Carbs")
 					{
-						echo "&emsp;&emsp;" . "Carbs Remaining: " . round(($Carb_Limit - $div),2) . $nutrient['unit'] . "<br>";
+						echo "&emsp;&emsp;" . "Carbs Remaining: " . round(($Carb_MaxGrams - $div),2) . $nutrient['unit'] . "<br>";
 					}
 					elseif ($nutrient['label'] === "Protein")
 					{
-						echo "&emsp;&emsp;" . "Protein Remaining: " . round(($Pro_Limit - $div),2) . $nutrient['unit'] . "<br>";
+						echo "&emsp;&emsp;" . "Protein Remaining: " . round(($Pro_MaxGrams - $div),2) . $nutrient['unit'] . "<br>";
 					}
 
 
