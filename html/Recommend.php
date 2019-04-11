@@ -69,15 +69,15 @@
 
 					if ($nutrient['label'] === "Fat")
 					{
-						echo "&emsp;&emsp;" . "Fat Remaining: " . ($Fat_Limit - round($div,2)) . $nutrient['unit'] . "<br>";
+						echo "&emsp;&emsp;" . "Fat Remaining: " . round(($Fat_Limit - $div),2) . $nutrient['unit'] . "<br>";
 					}
 					elseif ($nutrient['label'] === "Carbs")
 					{
-						echo "&emsp;&emsp;" . "Carbs Remaining: " . ($Carb_Limit - round($div,2)) . $nutrient['unit'] . "<br>";
+						echo "&emsp;&emsp;" . "Carbs Remaining: " . round(($Carb_Limit - $div),2) . $nutrient['unit'] . "<br>";
 					}
-					else
+					elseif ($nutrient['label'] === "Protein")
 					{
-						echo "&emsp;&emsp;" . "Protein Remaining: " . ($Pro_Limit - round($div,2)) . $nutrient['unit'] . "<br>";
+						echo "&emsp;&emsp;" . "Protein Remaining: " . round(($Pro_Limit - $div),2) . $nutrient['unit'] . "<br>";
 					}
 
 
