@@ -61,7 +61,7 @@ PARAMS = (
     ('app_key', config.api_key),
     ('from', '0'),
     ('to', str(config.number_of_results)),
-    ('calories', str(int(Calories_Remaining * .5)) + "-" + str(Calories_Remaining)),
+    ('calories', str(int(Calories_Remaining * .75)) + "-" + str(Calories_Remaining)),
     ('nutrients[PROCNT]', str(int(Protein_Remaining_Grams * .75)) + "-" + str(int(Protein_Remaining_Grams))),
     ('nutrients[FAT]', str(int(Fat_Remaining_Grams * .75)) + "-" + str(int(Fat_Remaining_Grams))),
     ('nutrients[CHOCDF]', str(int(Carb_Remaining_Grams * .75)) + "-" + str(int(Carb_Remaining_Grams))),
