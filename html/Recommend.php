@@ -12,9 +12,9 @@
 	$Search_Term = $_POST['Term'];
 
 	//Find out how many grams of each macro user needs. This is done in Python but needs done again here (for now)
-	$Carb_MaxGrams = (($Cal_Limit * $Carb_Limit) / 400);
-	$Pro_MaxGrams = (($Cal_Limit * $Pro_Limit) / 400);
-	$Fat_MaxGrams = (($Cal_Limit * $Fat_Limit) / 900);
+	$Carb_MaxGrams = (($Cal_Limit * ($Carb_Limit / 100)) / 4);
+	$Pro_MaxGrams = (($Cal_Limit * ($Pro_Limit/ 100)) / 4);
+	$Fat_MaxGrams = (($Cal_Limit * ($Fat_Limit / 100)) / 9);
 
 	//send to python script and get returned JSON values
 	$returned = exec("python3 /var/www/eaton/BackEnd/GenerateCall.py $Pro_Limit $Fat_Limit $Carb_Limit $Cal_Limit $Pro_Consumed $Fat_Consumed $Carb_Consumed $Search_Term");
@@ -69,6 +69,11 @@
 					{
 						$div = floatval($nutrient['quantity'])/intval($recipe['yield']);
 					}
+					else
+					{
+						$div = floatval($nutrient['quantity']);
+					}
+					
 					echo "&emsp;&emsp;" . $nutrient['label'] . ": " . round($div,2) . $nutrient['unit'] . "<br>";
 
 
