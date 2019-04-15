@@ -32,6 +32,14 @@
 	echo "<body>";
 	//echo "<pre>";
 
+	echo "Carb Grams Total: " . $Carb_MaxGrams . "<br>";
+	echo "Protein Grams Total: " . $Fat_MaxGrams . "<br>";
+	echo "Fat Grams Total: " . $Pro_MaxGrams . "<br>";
+
+	echo "Carb Grams Remaining: " . ($Carb_MaxGrams - $Carb_Consumed) . "<br>";
+	echo "Protein Grams Remaining: " . ($Pro_MaxGrams - $Pro_Consumed) . "<br>";
+	echo "Fat Grams Remaining: " . ($Fat_MaxGrams - $Fat_Consumed) . "<br>";
+
 	function printinfo()
 	{
 		global $recipesData;
