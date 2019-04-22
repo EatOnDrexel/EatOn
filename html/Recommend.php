@@ -35,7 +35,6 @@
 	{
 		global $recipesData;
 		global $hits;
-
 		global $Cal_Limit;
 		global $Carb_Remaining_Grams;
 		global $Pro_Remaining_Grams;
@@ -52,34 +51,23 @@
 			echo "&emsp;<b>Nutrients per serving: </b><br>";
 			foreach ($recipe['totalNutrients'] as $nutrient)
 			{
-				if ($nutrient['label'] === "Fat" || $nutrient['label'] === "Carbs" || $nutrient['label'] === "Protein")
+				if ($nutrient['label'] === "Fat")
 				{
-					if ($recipe['yield'] > 1)
-					{
-						$div = floatval($nutrient['quantity'])/intval($recipe['yield']);
-					}
-					else
-					{
-						$div = floatval($nutrient['quantity']);
-					}
-					
+					$div = floatval($nutrient['quantity'])/intval($recipe['yield']);
 					echo "&emsp;&emsp;" . $nutrient['label'] . ": " . round($div,2) . $nutrient['unit'] . "<br>";
-
-
-					if ($nutrient['label'] === "Fat")
-					{
-						echo "&emsp;&emsp;" . "Fat Remaining: " . round(($Fat_Remaining_Grams - $div), 2) . $nutrient['unit'] . "<br>";
-					}
-					elseif ($nutrient['label'] === "Carbs")
-					{
-						echo "&emsp;&emsp;" . "Carbs Remaining: " . round(($Carb_Remaining_Grams - $div), 2) . $nutrient['unit'] . "<br>";
-					}
-					elseif ($nutrient['label'] === "Protein")
-					{
-						echo "&emsp;&emsp;" . "Protein Remaining: " . round(($Pro_Remaining_Grams - $div), 2) . $nutrient['unit'] . "<br>";
-					}
-
-
+					echo "&emsp;&emsp;" . "Fat Remaining: " . round(($Fat_Remaining_Grams - $div), 2) . $nutrient['unit'] . "<br>";
+				}
+				elseif ($nutrient['label'] === "Carbs")
+				{
+					$div = floatval($nutrient['quantity'])/intval($recipe['yield']);
+					echo "&emsp;&emsp;" . $nutrient['label'] . ": " . round($div,2) . $nutrient['unit'] . "<br>";
+					echo "&emsp;&emsp;" . "Carbs Remaining: " . round(($Carb_Remaining_Grams - $div), 2) . $nutrient['unit'] . "<br>";
+				}
+				elseif ($nutrient['label'] === "Protein")
+				{
+					$div = floatval($nutrient['quantity'])/intval($recipe['yield']);
+					echo "&emsp;&emsp;" . $nutrient['label'] . ": " . round($div,2) . $nutrient['unit'] . "<br>";
+					echo "&emsp;&emsp;" . "Protein Remaining: " . round(($Pro_Remaining_Grams - $div), 2) . $nutrient['unit'] . "<br>";
 				}
 			}
 			if ($recipe['yield'] > 1)
