@@ -12,13 +12,9 @@
 	$Search_Term = $_POST['Term'];
 
 	//Find out how many grams of each macro user needs. This is done in Python but needs done again here (for now)
-	$Carb_MaxGrams = (($Cal_Limit * ($Carb_Limit / 100)) / 4);
-	$Pro_MaxGrams = (($Cal_Limit * ($Pro_Limit/ 100)) / 4);
-	$Fat_MaxGrams = (($Cal_Limit * ($Fat_Limit / 100)) / 9);
-
-	$Carb_Remaining_Grams = ($Carb_MaxGrams - $Carb_Consumed);
-	$Pro_Remaining_Grams = ($Pro_MaxGrams - $Pro_Consumed);
-	$Fat_Remaining_Grams = ($Fat_MaxGrams - $Fat_Consumed);
+	$Carb_Remaining_Grams = ((($Cal_Limit * ($Carb_Limit / 100)) / 4) - $Carb_Consumed);
+	$Pro_Remaining_Grams = ((($Cal_Limit * ($Pro_Limit/ 100)) / 4) - $Pro_Consumed);
+	$Fat_Remaining_Grams = ((($Cal_Limit * ($Fat_Limit / 100)) / 9) - $Fat_Consumed);
 
 	//send to python script and get returned JSON values
 	$returned = exec("python3 /var/www/eaton/BackEnd/GenerateCall.py $Pro_Limit $Fat_Limit $Carb_Limit $Cal_Limit $Pro_Consumed $Fat_Consumed $Carb_Consumed $Search_Term");
@@ -34,7 +30,6 @@
 	echo "<head>";
 	echo "</head>";
 	echo "<body>";
-	//echo "<pre>";
 
 	function printinfo()
 	{
@@ -42,9 +37,6 @@
 		global $hits;
 
 		global $Cal_Limit;
-		global $Carb_MaxGrams;
-		global $Pro_MaxGrams;
-		global $Fat_MaxGrams;
 		global $Carb_Remaining_Grams;
 		global $Pro_Remaining_Grams;
 		global $Fat_Remaining_Grams;
@@ -54,9 +46,7 @@
 			$recipe = $hit['recipe'];
 		
 			echo "<b>Recipe: </b><a href='".$recipe['url']."'>".$recipe['label']."</a><br>";
-			//echo '<b>Recipe: </b><a href="'.$recipe['label'].'">'.$recipe['label'].'</a>';
 			echo "<a href='".$recipe['url']."'><img src='".$recipe['image']."' alt='Recipe_Img'></a><br>";
-			//echo "<b>Link: </b>{$recipe['url']}<br>";
 			echo "&emsp;<b>Servings: </b>{$recipe['yield']}<br>";
 			echo "&emsp;<b>Total Nutrients: </b><br>";
 			foreach ($recipe['totalNutrients'] as $nutrient)
@@ -86,15 +76,15 @@
 
 					if ($nutrient['label'] === "Fat")
 					{
-						echo "&emsp;&emsp;" . "Fat Remaining: " . ($Fat_Remaining_Grams - $div) . $nutrient['unit'] . "<br>";
+						echo "&emsp;&emsp;" . "Fat Remaining: " . round(($Fat_Remaining_Grams - $div), 2) . $nutrient['unit'] . "<br>";
 					}
 					elseif ($nutrient['label'] === "Carbs")
 					{
-						echo "&emsp;&emsp;" . "Carbs Remaining: " . ($Carb_Remaining_Grams - $div) . $nutrient['unit'] . "<br>";
+						echo "&emsp;&emsp;" . "Carbs Remaining: " . round(($Carb_Remaining_Grams - $div), 2) . $nutrient['unit'] . "<br>";
 					}
 					elseif ($nutrient['label'] === "Protein")
 					{
-						echo "&emsp;&emsp;" . "Protein Remaining: " . ($Pro_Remaining_Grams - $div) . $nutrient['unit'] . "<br>";
+						echo "&emsp;&emsp;" . "Protein Remaining: " . round(($Pro_Remaining_Grams - $div), 2) . $nutrient['unit'] . "<br>";
 					}
 
 
@@ -108,7 +98,6 @@
 			{
 				echo "&emsp;&emsp;Calories: " . round(floatval($recipe['calories']),2) . "kcal<br>";
 			}
-			//echo NL . NL;
 			echo "<br><br>";
 		}
 	}
@@ -133,8 +122,6 @@
 	}
 
 	checkifempty();
-
-	//echo "</pre>";
 
 	echo "<br>";
 	echo "</body>";
