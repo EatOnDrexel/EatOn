@@ -45,6 +45,9 @@
 		global $Carb_MaxGrams;
 		global $Pro_MaxGrams;
 		global $Fat_MaxGrams;
+		global $Carb_Remaining_Grams;
+		global $Pro_Remaining_Grams;
+		global $Fat_Remaining_Grams;
  
 		foreach ($hits as $hit)
 		{
