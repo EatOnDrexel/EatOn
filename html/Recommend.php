@@ -32,9 +32,9 @@
 	echo "<body>";
 	//echo "<pre>";
 
-	echo $Carb_Limit . <br>;
-	echo $Pro_Limit . <br>;
-	echo $Fat_Limit . <br>;
+	echo $Carb_Limit . "<br>";
+	echo $Pro_Limit . "<br>";
+	echo $Fat_Limit . "<br>";
 	echo "Carb Grams Total: " . $Carb_MaxGrams . "<br>";
 	echo "Protein Grams Total: " . $Fat_MaxGrams . "<br>";
 	echo "Fat Grams Total: " . $Pro_MaxGrams . "<br>";
