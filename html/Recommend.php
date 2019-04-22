@@ -70,14 +70,8 @@
 					echo "&emsp;&emsp;" . "Protein Remaining: " . round(($Pro_Remaining_Grams - $div), 2) . $nutrient['unit'] . "<br>";
 				}
 			}
-			if ($recipe['yield'] > 1)
-			{
 				echo "&emsp;&emsp;Calories: " . round(floatval($recipe['calories'])/intval($recipe['yield']),2) . "kcal<br>";
-			}
-			else
-			{
-				echo "&emsp;&emsp;Calories: " . round(floatval($recipe['calories']),2) . "kcal<br>";
-			}
+			
 			echo "<br><br>";
 		}
 	}
