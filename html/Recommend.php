@@ -16,6 +16,10 @@
 	$Pro_MaxGrams = (($Cal_Limit * ($Pro_Limit/ 100)) / 4);
 	$Fat_MaxGrams = (($Cal_Limit * ($Fat_Limit / 100)) / 9);
 
+	$Carb_Remaining_Grams = ($Carb_MaxGrams - $Carb_Consumed);
+	$Pro_Remaining_Grams = ($Pro_MaxGrams - $Pro_Consumed);
+	$Fat_Remaining_Grams = ($Fat_MaxGrams - $Fat_Consumed);
+
 	//send to python script and get returned JSON values
 	$returned = exec("python3 /var/www/eaton/BackEnd/GenerateCall.py $Pro_Limit $Fat_Limit $Carb_Limit $Cal_Limit $Pro_Consumed $Fat_Consumed $Carb_Consumed $Search_Term");
 
@@ -31,17 +35,6 @@
 	echo "</head>";
 	echo "<body>";
 	//echo "<pre>";
-
-	echo $Carb_Limit . "<br>";
-	echo $Pro_Limit . "<br>";
-	echo $Fat_Limit . "<br>";
-	echo "Carb Grams Total: " . $Carb_MaxGrams . "<br>";
-	echo "Protein Grams Total: " . $Fat_MaxGrams . "<br>";
-	echo "Fat Grams Total: " . $Pro_MaxGrams . "<br>";
-
-	echo "Carb Grams Remaining: " . ($Carb_MaxGrams - $Carb_Consumed) . "<br>";
-	echo "Protein Grams Remaining: " . ($Pro_MaxGrams - $Pro_Consumed) . "<br>";
-	echo "Fat Grams Remaining: " . ($Fat_MaxGrams - $Fat_Consumed) . "<br>";
 
 	function printinfo()
 	{
@@ -91,17 +84,17 @@
 					if ($nutrient['label'] === "Fat")
 					{
 						echo $div . "<br>";
-						echo "&emsp;&emsp;" . "Fat Remaining: " . round(($Fat_MaxGrams - $div),2) . $nutrient['unit'] . "<br>";
+						echo "&emsp;&emsp;" . "Fat Remaining: " . round(($Fat_Remaining_Grams - $div),2) . $nutrient['unit'] . "<br>";
 					}
 					elseif ($nutrient['label'] === "Carbs")
 					{
 						echo $div . "<br>";
-						echo "&emsp;&emsp;" . "Carbs Remaining: " . round(($Carb_MaxGrams - $div),2) . $nutrient['unit'] . "<br>";
+						echo "&emsp;&emsp;" . "Carbs Remaining: " . round(($Carb_Remaining_Grams - $div),2) . $nutrient['unit'] . "<br>";
 					}
 					elseif ($nutrient['label'] === "Protein")
 					{
 						echo $div . "<br>";
-						echo "&emsp;&emsp;" . "Protein Remaining: " . round(($Pro_MaxGrams - $div),2) . $nutrient['unit'] . "<br>";
+						echo "&emsp;&emsp;" . "Protein Remaining: " . round(($Pro_Remaining_Grams - $div),2) . $nutrient['unit'] . "<br>";
 					}
 
 
