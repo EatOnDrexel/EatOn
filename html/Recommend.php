@@ -90,17 +90,17 @@
 
 					if ($nutrient['label'] === "Fat")
 					{
-						echo $div . <br>;
+						echo $div . "<br>";
 						echo "&emsp;&emsp;" . "Fat Remaining: " . round(($Fat_MaxGrams - $div),2) . $nutrient['unit'] . "<br>";
 					}
 					elseif ($nutrient['label'] === "Carbs")
 					{
-						echo $div . <br>;
+						echo $div . "<br>";
 						echo "&emsp;&emsp;" . "Carbs Remaining: " . round(($Carb_MaxGrams - $div),2) . $nutrient['unit'] . "<br>";
 					}
 					elseif ($nutrient['label'] === "Protein")
 					{
-						echo $div . <br>;
+						echo $div . "<br>";
 						echo "&emsp;&emsp;" . "Protein Remaining: " . round(($Pro_MaxGrams - $div),2) . $nutrient['unit'] . "<br>";
 					}
 
