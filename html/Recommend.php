@@ -36,11 +36,6 @@
 	echo "<body>";
 	//echo "<pre>";
 
-
-	echo $Carb_Remaining_Grams . "<br>";
-	echo $Fat_Remaining_Grams . "<br>";
-	echo $Pro_Remaining_Grams . "<br>";
-
 	function printinfo()
 	{
 		global $recipesData;
@@ -88,15 +83,15 @@
 
 					if ($nutrient['label'] === "Fat")
 					{
-						echo "&emsp;&emsp;" . "Fat Remaining: " . round(($Fat_Remaining_Grams - $div),2) . $nutrient['unit'] . "<br>";
+						echo "&emsp;&emsp;" . "Fat Remaining: " . ($Fat_Remaining_Grams - $div) . $nutrient['unit'] . "<br>";
 					}
 					elseif ($nutrient['label'] === "Carbs")
 					{
-						echo "&emsp;&emsp;" . "Carbs Remaining: " . round(($Carb_Remaining_Grams - $div),2) . $nutrient['unit'] . "<br>";
+						echo "&emsp;&emsp;" . "Carbs Remaining: " . ($Carb_Remaining_Grams - $div) . $nutrient['unit'] . "<br>";
 					}
 					elseif ($nutrient['label'] === "Protein")
 					{
-						echo "&emsp;&emsp;" . "Protein Remaining: " . round(($Pro_Remaining_Grams - $div),2) . $nutrient['unit'] . "<br>";
+						echo "&emsp;&emsp;" . "Protein Remaining: " . ($Pro_Remaining_Grams - $div) . $nutrient['unit'] . "<br>";
 					}
 
 
