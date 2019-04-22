@@ -50,16 +50,17 @@
 			echo "&emsp;<b>Servings: </b>{$recipe['yield']}<br>";
 			echo "&emsp;<b>Total Nutrients: </b><br>";
 
+			/*
 			foreach ($recipe['totalNutrients'] as $nutrient)
 			{
-				/* if ($nutrient['label'] === "Fat" || $nutrient['label'] === "Carbs" || $nutrient['label'] === "Protein")
+				 if ($nutrient['label'] === "Fat" || $nutrient['label'] === "Carbs" || $nutrient['label'] === "Protein")
 				{
 					echo "&emsp;&emsp;" . $nutrient['label'] . ": " . round(floatval($nutrient['quantity']),2) . $nutrient['unit'] . "<br>";
 				}
 			}
 			echo "&emsp;&emsp;Calories: " . round(floatval($recipe['calories']),2) . "kcal<br>";
 			*/
-			
+
 			echo "&emsp;<b>Nutrients per serving: </b><br>";
 			foreach ($recipe['totalNutrients'] as $nutrient)
 			{
