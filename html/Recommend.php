@@ -47,10 +47,11 @@
 		
 			echo "<b>Recipe: </b><a href='".$recipe['url']."'>".$recipe['label']."</a><br>";
 			echo "<a href='".$recipe['url']."'><img src='".$recipe['image']."' alt='Recipe_Img'></a><br>";
-			echo "&emsp;<b>Servings: </b>{$recipe['yield']}<br>";
+			echo "&emsp;<b>Makes {$recipe['yield']} Servings</b><br>";
+			/*
 			echo "&emsp;<b>Total Nutrients: </b><br>";
 
-			/*
+
 			foreach ($recipe['totalNutrients'] as $nutrient)
 			{
 				 if ($nutrient['label'] === "Fat" || $nutrient['label'] === "Carbs" || $nutrient['label'] === "Protein")
