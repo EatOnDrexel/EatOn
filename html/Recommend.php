@@ -32,6 +32,9 @@
 	echo "<body>";
 	//echo "<pre>";
 
+	echo $Carb_Limit . <br>;
+	echo $Pro_Limit . <br>;
+	echo $Fat_Limit . <br>;
 	echo "Carb Grams Total: " . $Carb_MaxGrams . "<br>";
 	echo "Protein Grams Total: " . $Fat_MaxGrams . "<br>";
 	echo "Fat Grams Total: " . $Pro_MaxGrams . "<br>";
@@ -87,14 +90,17 @@
 
 					if ($nutrient['label'] === "Fat")
 					{
+						echo $div . <br>;
 						echo "&emsp;&emsp;" . "Fat Remaining: " . round(($Fat_MaxGrams - $div),2) . $nutrient['unit'] . "<br>";
 					}
 					elseif ($nutrient['label'] === "Carbs")
 					{
+						echo $div . <br>;
 						echo "&emsp;&emsp;" . "Carbs Remaining: " . round(($Carb_MaxGrams - $div),2) . $nutrient['unit'] . "<br>";
 					}
 					elseif ($nutrient['label'] === "Protein")
 					{
+						echo $div . <br>;
 						echo "&emsp;&emsp;" . "Protein Remaining: " . round(($Pro_MaxGrams - $div),2) . $nutrient['unit'] . "<br>";
 					}
 
