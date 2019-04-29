@@ -2,17 +2,20 @@ body
 {
 	margin-left: 10px;
 	font-family: Georgia, serif;
+
 }
 
 li
 {
 	margin-left: 10px;
 	list-style: none;
+	font-family: Georgia, serif;
 }
 
 button
 {
 	margin-left: 10px;
+	font-family: Georgia, serif;
 }
 
 
