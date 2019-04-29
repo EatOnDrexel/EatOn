@@ -44,6 +44,10 @@
 	echo "tr:nth-child(even) {";
   		echo "background-color: #dddddd;";
 		echo "}";
+
+	echo "td[colspan=\"3\"] {";
+    	echo "text-align: center;";
+}
 	echo "</style>";
 	echo "</head>";
 	echo "<body>";
@@ -63,9 +67,7 @@
 		
 			echo "<b>Recipe: </b><a href='".$recipe['url']."'>".$recipe['label']."</a><br>";
 			echo "<a href='".$recipe['url']."'><img src='".$recipe['image']."' alt='Recipe_Img'></a><br>";
-			echo "&emsp;<b>Makes {$recipe['yield']} Servings</b><br>";
-
-			echo "&emsp;<b>Nutrients per serving: </b><br>";
+			
 			foreach ($recipe['totalNutrients'] as $nutrient)
 			{
 				if ($nutrient['label'] === "Fat")
@@ -91,10 +93,10 @@
 
 			echo "<table>";
 			echo "<tr>";
-				echo "<td align=\"right\" colspan=\"3\">" . "<b>" . "Makes " . $recipe['yield'] . " serving(s)" . "</b></td>";
+				echo "<td colspan=\"3\">" . "<b>" . "Makes " . $recipe['yield'] . " serving(s)" . "</b></td>";
 			echo "</tr>";
 			echo "<tr>";
-				echo "<td align=\"right\" colspan=\"3\">" . "<b>" . "Calories: " . $Calories_In_Recipe . " cal." . "</b></td>";
+				echo "<td colspan=\"3\">" . "<b>" . "Calories: " . $Calories_In_Recipe . "</b></td>";
 			echo "</tr>";
   			echo "<tr>";
     			echo "<th></th>";
