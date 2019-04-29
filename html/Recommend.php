@@ -28,6 +28,23 @@
 
 	echo "<html>";
 	echo "<head>";
+	echo "<style>";
+	echo "table {";
+  		echo "font-family: arial, sans-serif;";
+  		echo "border-collapse: collapse;";
+  		echo "width: 100%;";
+		echo "}";
+
+	echo "td, th {";
+  		echo "border: 1px solid #dddddd;";
+  		echo "text-align: left;";
+  		echo "padding: 8px;";
+		echo "}";
+
+	echo "tr:nth-child(even) {";
+  		echo "background-color: #dddddd;";
+		echo "}";
+	echo "</style>";
 	echo "</head>";
 	echo "<body>";
 
