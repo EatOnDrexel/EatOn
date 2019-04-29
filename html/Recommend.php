@@ -17,7 +17,7 @@
 	$Fat_Remaining_Grams = ((($Cal_Limit * ($Fat_Limit / 100)) / 9) - $Fat_Consumed);
 
 	//send to python script and get returned JSON values
-	$returned = exec("python3 /var/www/eaton/BackEnd/GenerateCall.py $Pro_Limit $Fat_Limit $Carb_Limit $Cal_Limit $Pro_Consumed $Fat_Consumed $Carb_Consumed $Search_Term");
+	$returned = exec("python3 /var/www/eaton/GenerateCall.py $Pro_Limit $Fat_Limit $Carb_Limit $Cal_Limit $Pro_Consumed $Fat_Consumed $Carb_Consumed $Search_Term");
 
 	//converts output into a php array
 	$recipesData = json_decode($returned, true);
