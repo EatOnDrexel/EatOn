@@ -30,7 +30,7 @@
 	echo "<head>";
 	echo "<style>";
 	echo "table {";
-  		echo "font-family: arial, sans-serif;";
+  		echo "font-family: helvetica, sans-serif;";
   		echo "border-collapse: collapse;";
   		echo "width: 100%;";
 		echo "}";
@@ -48,10 +48,15 @@
 	echo "td[colspan=\"3\"] {";
     	echo "text-align: center;";
 		echo "}";
+
+	echo ".contentcontainer {";
+		echo" margin: 0 auto;";
+		echo" width: 80%;";
+	echo "}";
 	echo "</style>";
 	echo "</head>";
 	echo "<body>";
-
+	echo"<div class="contentcontainer">";
 	function generatevars()
 	{
 		global $recipesData;
@@ -87,10 +92,9 @@
 				
 
 			#Prints for recipes go here
-
 			echo "<table>";
 			echo "<tr>";
-				echo "<td colspan=\"3\"><b>" . "Recipe: " . "</b><a href='" . $recipe['url'] . "'>" . $recipe['label'] . "</a></b></td>";
+				echo "<td colspan=\"3\" swf_fontsize(24px)><b>" . "Recipe: " . "</b><a href='" . $recipe['url'] . "'>" . $recipe['label'] . "</a></b></td>";
 			echo "</tr>";
 			echo "<tr>";
 				echo "<td colspan=\"3\"><a href='" . $recipe['url'] . "'><img src='" . $recipe['image'] . "' alt='Recipe_Img'></a><br></td>";
@@ -126,7 +130,7 @@
 			echo "<br><br>";
 		}
 	}
-
+			echo"</div>";
 
 	function checkifempty()
 	{
