@@ -99,7 +99,7 @@
 
 			#Prints for recipes go here
 
-			echo "<table style=\"width:100%\">";
+			echo "<table>";
   			echo "<tr>";
     			echo "<th>Firstname</th>";
     			echo "<th>Lastname</th>";
