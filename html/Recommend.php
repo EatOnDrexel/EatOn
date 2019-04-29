@@ -32,7 +32,8 @@
 	echo "table {";
   		echo "font-family: Georgia, serif;";
   		echo "border-collapse: collapse;";
-  		echo "width: 100%;";
+  		echo "width: 60%;";
+  		echo "margin: 0 auto;"
 		echo "}";
 
 	echo "td, th {";
@@ -49,14 +50,10 @@
     	echo "text-align: center;";
 		echo "}";
 
-	echo ".contentcontainer {";
-		echo" margin: 0 auto;";
-		echo" width: 20%;";
-	echo "}";
 	echo "</style>";
 	echo "</head>";
 	echo "<body>";
-	echo"<div class=\"contentcontainer\">";
+	
 	function generatevars()
 	{
 		global $recipesData;
@@ -130,7 +127,6 @@
 			echo "<br><br>";
 		}
 	}
-			echo"</div>";
 
 	function checkifempty()
 	{
