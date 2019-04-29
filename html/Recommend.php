@@ -53,7 +53,8 @@
 
 	echo ".banner{";
 		echo "align: center;";
-		echo "width: 80%;";
+		echo "margin: 0 auto;";
+		echo "width: 60%;";
 		echo "height: auto;";
 	echo "}";
 
