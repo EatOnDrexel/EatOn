@@ -47,7 +47,7 @@
 
 	echo "td[colspan=\"3\"] {";
     	echo "text-align: center;";
-}
+		echo "}";
 	echo "</style>";
 	echo "</head>";
 	echo "<body>";
