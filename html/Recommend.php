@@ -30,7 +30,7 @@
 	echo "<head>";
 	echo "<style>";
 	echo "table {";
-  		echo "font-family: helvetica, sans-serif;";
+  		echo "font-family: Georgia, serif;";
   		echo "border-collapse: collapse;";
   		echo "width: 100%;";
 		echo "}";
@@ -51,7 +51,7 @@
 
 	echo ".contentcontainer {";
 		echo" margin: 0 auto;";
-		echo" width: 80%;";
+		echo" width: 20%;";
 	echo "}";
 	echo "</style>";
 	echo "</head>";
