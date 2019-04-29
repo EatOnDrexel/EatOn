@@ -56,7 +56,7 @@
 	echo "</style>";
 	echo "</head>";
 	echo "<body>";
-	echo"<div class="contentcontainer">";
+	echo"<div class=\"contentcontainer\">";
 	function generatevars()
 	{
 		global $recipesData;
