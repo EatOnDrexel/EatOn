@@ -107,18 +107,18 @@
   			echo "</tr>";
   			echo "<tr>";
     			echo "<td><b>Fat</b></td>";
-    			echo "<td>valuerecipe</td>"; 
-    			echo "<td>valueremain</td>";
+    			echo "<td>" . $Fat_In_Recipe . "g</td>"; 
+    			echo "<td>" . $Fat_Leftover . "g</td>";
   			echo "</tr>";
   			echo "<tr>";
     			echo "<td><b>Carbs</b></td>";
-    			echo "<td>inrecipe</td>";
-    			echo "<td>remain</td>";
+    			echo "<td>" . $Carb_In_Recipe . "g</td>";
+    			echo "<td>" . $Carb_Leftover . "g</td>";
   			echo "</tr>";
   			echo "<tr>";
     			echo "<td><b>Protein</b></td>";
-    			echo "<td>inrecipe</td>";
-    			echo "<td>remaining</td>";
+    			echo "<td>" . $Pro_In_Recipe . "g</td>";
+    			echo "<td>" . $Pro_Leftover . "g</td>";
   			echo "</tr>";
 			echo "</table>";
 
