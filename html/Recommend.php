@@ -53,7 +53,7 @@
 
 	echo ".banner{";
 		echo "display: relative;";
-		echo "align: center;"
+		echo "align: center;";
 		echo "width: 80%;";
 		echo "height: auto;";
 	echo "}";
@@ -61,7 +61,9 @@
 	echo "</style>";
 	echo "</head>";
 	echo "<body>";
-	echo "<img src=\"..\EatONbanner.png\"  class=\"banner\">";
+	echo "<div class=\"banner\"";
+	echo "<img src=\"..\EatONbanner.png\"  width=\"100%\">";
+	echo "</div>";
 	function generatevars()
 	{
 		global $recipesData;
