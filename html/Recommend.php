@@ -52,7 +52,7 @@
 	echo "</head>";
 	echo "<body>";
 
-	function printinfo()
+	function generatevars()
 	{
 		global $recipesData;
 		global $hits;
@@ -65,7 +65,7 @@
 		{
 			$recipe = $hit['recipe'];
 		
-			echo "<b>Recipe: </b><a href='".$recipe['url']."'>".$recipe['label']."</a><br>";
+			#echo "<b>Recipe: </b><a href='".$recipe['url']."'>".$recipe['label']."</a><br>";
 			echo "<a href='".$recipe['url']."'><img src='".$recipe['image']."' alt='Recipe_Img'></a><br>";
 			
 			foreach ($recipe['totalNutrients'] as $nutrient)
@@ -93,10 +93,16 @@
 
 			echo "<table>";
 			echo "<tr>";
-				echo "<td colspan=\"3\">" . "<b>" . "Makes " . $recipe['yield'] . " serving(s)" . "</b></td>";
+				echo "<td colspan=\"3\"><b>" . "Recipe: " . "</b><a href='" . $recipe['url'] . "'>" . $recipe['label'] . "</a></b></td>";
 			echo "</tr>";
 			echo "<tr>";
-				echo "<td colspan=\"3\">" . "<b>" . "Calories: " . $Calories_In_Recipe . "</b></td>";
+				echo "<td colspan=\"3\"><a href='" . $recipe['url'] . "'><img src='" . $recipe['image'] . "' alt='Recipe_Img'></a><br></td>";
+			echo "</tr>";
+			echo "<tr>";
+				echo "<td colspan=\"3\"><b>" . "Makes " . $recipe['yield'] . " serving(s)" . "</b></td>";
+			echo "</tr>";
+			echo "<tr>";
+				echo "<td colspan=\"3\"><b>" . "Calories: " . $Calories_In_Recipe . "</b></td>";
 			echo "</tr>";
   			echo "<tr>";
     			echo "<th></th>";
@@ -139,7 +145,7 @@
 		else
 		{
 			//calls above function to print out data
-			printinfo();
+			generatevars();
 		}
 	}
 
