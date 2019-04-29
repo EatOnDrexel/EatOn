@@ -52,8 +52,10 @@
 		echo "}";
 
 	echo ".banner{";
-		echo "align: center;";
-		echo "margin: 0 auto;";
+		echo"display: block;";
+ 		echo "margin-left: auto;";
+ 		echo" margin-right: auto;";
+ 		echo" margin-bottom: 20px;";
 		echo "width: 60%;";
 		echo "height: auto;";
 	echo "}";
