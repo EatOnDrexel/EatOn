@@ -64,9 +64,6 @@
 		foreach ($hits as $hit)
 		{
 			$recipe = $hit['recipe'];
-		
-			#echo "<b>Recipe: </b><a href='".$recipe['url']."'>".$recipe['label']."</a><br>";
-			#echo "<a href='".$recipe['url']."'><img src='".$recipe['image']."' alt='Recipe_Img'></a><br>";
 			
 			foreach ($recipe['totalNutrients'] as $nutrient)
 			{
