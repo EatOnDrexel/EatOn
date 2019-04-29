@@ -1,7 +1,6 @@
 body
 {
 	margin-left: 10px;
-	font-family: Georgia, serif;
 
 }
 
@@ -9,13 +8,15 @@ li
 {
 	margin-left: 10px;
 	list-style: none;
-	font-family: Georgia, serif;
 }
 
 button
 {
 	margin-left: 10px;
-	font-family: Georgia, serif;
 }
 
-
+.contentcontainer{
+	display: block;
+	width: 60%;
+	margin: 0 auto;
+}
