@@ -13,11 +13,11 @@ li{
 button{
 	margin-left: 10px;
 	font-family: Georgia, serif;
-	width: 20px;
+	width: 100px;
 	transition: 0.2s;
 }
 
-button :hover{
+button:hover{
 	color: white;
 	background-color: #2F3848; 
 }
@@ -38,6 +38,6 @@ button :hover{
 
 	.form{
 	display: block;
- 	margin-left: 50%;
+ 	margin-left: 35%;
  	margin-right: auto;
 	}
