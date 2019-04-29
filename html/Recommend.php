@@ -51,16 +51,16 @@
     	echo "background-color: #fff;";
 		echo "}";
 
-	echo "img{";
+	echo ".banner{";
 		echo "margin: 0 auto;";
 		echo "width: 80%;";
 		echo "height: auto;";
 	echo "}";
-	
+
 	echo "</style>";
 	echo "</head>";
 	echo "<body>";
-	echo "<img src=\"..\EatONbanner.png\">";
+	echo "<img src=\"..\EatONbanner.png\"  class=\"banner\">";
 	function generatevars()
 	{
 		global $recipesData;
