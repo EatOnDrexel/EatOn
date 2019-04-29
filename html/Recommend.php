@@ -33,7 +33,7 @@
   		echo "font-family: Georgia, serif;";
   		echo "border-collapse: collapse;";
   		echo "width: 60%;";
-  		echo "margin: 0 auto;"
+  		echo "margin: 0 auto;";
 		echo "}";
 
 	echo "td, th {";
