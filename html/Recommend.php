@@ -101,19 +101,24 @@
 
 			echo "<table>";
   			echo "<tr>";
-    			echo "<th>Firstname</th>";
-    			echo "<th>Lastname</th>";
-    			echo "<th>Age</th>";
+    			echo "<th></th>";
+    			echo "<th>In Recipe</th>";
+    			echo "<th>Remaining</th>";
   			echo "</tr>";
   			echo "<tr>";
-    			echo "<td>Jill</td>";
-    			echo "<td>Smith</td>"; 
-    			echo "<td>50</td>";
+    			echo "<td><b>Fat</b></td>";
+    			echo "<td>valuerecipe</td>"; 
+    			echo "<td>valueremain</td>";
   			echo "</tr>";
   			echo "<tr>";
-    			echo "<td>Eve</td>";
-    			echo "<td>Jackson</td>";
-    			echo "<td>94</td>";
+    			echo "<td><b>Carbs</b></td>";
+    			echo "<td>inrecipe</td>";
+    			echo "<td>remain</td>";
+  			echo "</tr>";
+  			echo "<tr>";
+    			echo "<td><b>Protein</b></td>";
+    			echo "<td>inrecipe</td>";
+    			echo "<td>remaining</td>";
   			echo "</tr>";
 			echo "</table>";
 
