@@ -1,27 +1,27 @@
-body
-{
+body{
 	margin-left: 10px;
 	font-family: Georgia, serif;
 	color: #2F3848;
 }
 
-li
-{
+li{
 	margin-left: 10px;
 	list-style: none;
 	font-family: Georgia, serif;
 }
 
-button
-{
+button{
 	margin-left: 10px;
 	font-family: Georgia, serif;
+	width: 20px;
+	transition: 0.2s;
 }
-/*
-.contentcontainer{
-	margin-left: auto;
-	margin-right: auto;
-}*/
+
+button :hover{
+	color: white;
+	background-color: #2F3848; 
+}
+
  h3{
  	font-family: Georgia, serif;
  	color: #2F3848;
@@ -38,6 +38,6 @@ button
 
 	.form{
 	display: block;
- 	margin-left: 25%;
+ 	margin-left: 50%;
  	margin-right: auto;
 	}
