@@ -82,23 +82,23 @@
 
 			#Prints for recipes go here
 
-			echo "<table style=\"width:100%\">"
-  			echo "<tr>"
-    			echo "<th>Firstname</th>"
-    			echo "<th>Lastname</th>" 
-    			echo "<th>Age</th>"
-  			echo "</tr>"
-  			echo "<tr>"
-    			echo "<td>Jill</td>"
-    			echo "<td>Smith</td>" 
-    			echo "<td>50</td>"
-  			echo "</tr>"
-  			echo "<tr>"
-    			echo "<td>Eve</td>"
-    			echo "<td>Jackson</td>"
-    			echo "<td>94</td>"
-  			echo "</tr>"
-			echo "</table>"
+			echo "<table style=\"width:100%\">";
+  			echo "<tr>";
+    			echo "<th>Firstname</th>";
+    			echo "<th>Lastname</th>";
+    			echo "<th>Age</th>";
+  			echo "</tr>";
+  			echo "<tr>";
+    			echo "<td>Jill</td>";
+    			echo "<td>Smith</td>"; 
+    			echo "<td>50</td>";
+  			echo "</tr>";
+  			echo "<tr>";
+    			echo "<td>Eve</td>";
+    			echo "<td>Jackson</td>";
+    			echo "<td>94</td>";
+  			echo "</tr>";
+			echo "</table>";
 
 			echo "<br><br>";
 		}
