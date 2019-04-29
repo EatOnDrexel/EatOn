@@ -54,7 +54,7 @@
 	echo "</style>";
 	echo "</head>";
 	echo "<body>";
-	echo "<img src="html/eatONbanner.png">";
+	echo "<img src=\"eatONbanner.png\">";
 	function generatevars()
 	{
 		global $recipesData;
