@@ -38,6 +38,8 @@ button:hover{
 
 	.form{
 	display: block;
- 	margin-left: 35%;
+ 	margin-left: 40%;
  	margin-right: auto;
+ 	width: 60%;
+ 	height: auto;
 	}
