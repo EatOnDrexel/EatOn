@@ -30,6 +30,7 @@
 	echo "<head>";
 	echo "<style>";
 	echo "table {";
+		echo"color: #2F3848;";
   		echo "font-family: Georgia, serif;";
   		echo "border-collapse: collapse;";
   		echo "width: 60%;";
