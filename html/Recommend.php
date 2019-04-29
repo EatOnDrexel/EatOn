@@ -85,17 +85,16 @@
 				}
 			}
 				$Calories_In_Recipe = round(floatval($recipe['calories'])/intval($recipe['yield']),2);
-				#echo "&emsp;&emsp;Calories: " . $Calories_In_Recipe . "kcal<br>";
-			
+				
 
 			#Prints for recipes go here
 
 			echo "<table>";
 			echo "<tr>";
-				echo "<td colspan=\"3\">" . "Makes " . $recipe['yield'] . "Serving(s)" . "</td>";
+				echo "<td align=\"right\" colspan=\"3\">" . "<b>" . "Makes " . $recipe['yield'] . " serving(s)" . "</b></td>";
 			echo "</tr>";
 			echo "<tr>";
-				echo "<td colspan=\"3\">" . "Calories: " . $Calories_In_Recipe . "</td>";
+				echo "<td align=\"right\" colspan=\"3\">" . "<b>" . "Calories: " . $Calories_In_Recipe . " cal." . "</b></td>";
 			echo "</tr>";
   			echo "<tr>";
     			echo "<th></th>";
