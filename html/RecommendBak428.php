@@ -53,31 +53,24 @@
 			{
 				if ($nutrient['label'] === "Fat")
 				{
-					$div = round(floatval($nutrient['quantity'])/intval($recipe['yield']), 2);
-					$Fat_Leftover = round(($Fat_Remaining_Grams - $div), 2);
-
-					echo "&emsp;&emsp;" . $nutrient['label'] . ": " . $div . $nutrient['unit'] . "<br>";
-					echo "&emsp;&emsp;" . "Fat Remaining: " . $Fat_Leftover . $nutrient['unit'] . "<br>";
+					$div = floatval($nutrient['quantity'])/intval($recipe['yield']);
+					echo "&emsp;&emsp;" . $nutrient['label'] . ": " . round($div,2) . $nutrient['unit'] . "<br>";
+					echo "&emsp;&emsp;" . "Fat Remaining: " . round(($Fat_Remaining_Grams - $div), 2) . $nutrient['unit'] . "<br>";
 				}
 				elseif ($nutrient['label'] === "Carbs")
 				{
-					$div = round(floatval($nutrient['quantity'])/intval($recipe['yield']), 2);
-					$Carb_Leftover = round(($Carb_Remaining_Grams - $div), 2);
-
-					echo "&emsp;&emsp;" . $nutrient['label'] . ": " . $div . $nutrient['unit'] . "<br>";
-					echo "&emsp;&emsp;" . "Carbs Remaining: " . $Carb_Leftover . $nutrient['unit'] . "<br>";
+					$div = floatval($nutrient['quantity'])/intval($recipe['yield']);
+					echo "&emsp;&emsp;" . $nutrient['label'] . ": " . round($div,2) . $nutrient['unit'] . "<br>";
+					echo "&emsp;&emsp;" . "Carbs Remaining: " . round(($Carb_Remaining_Grams - $div), 2) . $nutrient['unit'] . "<br>";
 				}
 				elseif ($nutrient['label'] === "Protein")
 				{
-					$div = round(floatval($nutrient['quantity'])/intval($recipe['yield']), 2);
-					$Pro_Leftover = round(($Pro_Remaining_Grams - $div), 2);
-
-					echo "&emsp;&emsp;" . $nutrient['label'] . ": " . $div . $nutrient['unit'] . "<br>";
-					echo "&emsp;&emsp;" . "Protein Remaining: " . $Pro_Leftover . $nutrient['unit'] . "<br>";
+					$div = floatval($nutrient['quantity'])/intval($recipe['yield']);
+					echo "&emsp;&emsp;" . $nutrient['label'] . ": " . round($div,2) . $nutrient['unit'] . "<br>";
+					echo "&emsp;&emsp;" . "Protein Remaining: " . round(($Pro_Remaining_Grams - $div), 2) . $nutrient['unit'] . "<br>";
 				}
 			}
-				$Calories_In_Recipe = round(floatval($recipe['calories'])/intval($recipe['yield']),2);
-				echo "&emsp;&emsp;Calories: " . $Calories_In_Recipe . "kcal<br>";
+				echo "&emsp;&emsp;Calories: " . round(floatval($recipe['calories'])/intval($recipe['yield']),2) . "kcal<br>";
 			
 			echo "<br><br>";
 		}
