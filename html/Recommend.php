@@ -52,7 +52,8 @@
 		echo "}";
 
 	echo ".banner{";
-		echo "margin: 0 auto;";
+		echo "display: relative;";
+		echo "align: center;"
 		echo "width: 80%;";
 		echo "height: auto;";
 	echo "}";
