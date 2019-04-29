@@ -17,11 +17,11 @@ button
 	margin-left: 10px;
 	font-family: Georgia, serif;
 }
-
+/*
 .contentcontainer{
 	margin-left: auto;
 	margin-right: auto;
-}
+}*/
  h3{
  	font-family: Georgia, serif;
  	color: #2F3848;
@@ -29,9 +29,18 @@ button
 
  .banner{
 	display: block;
- 		margin-left: auto;
- 		margin-right: auto;
- 		margin-bottom: 20px;
-		width: 60%;
-		height: auto;
+ 	margin-left: auto;
+ 	margin-right: auto;
+ 	margin-bottom: 20px;
+	width: 60%;
+	height: auto;
+	}
+
+	.form{
+	display: block;
+ 	margin-left: auto;
+ 	margin-right: auto;
+ 	margin-bottom: 20px;
+	width: 60%;
+	height: auto;
 	}
