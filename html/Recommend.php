@@ -34,23 +34,29 @@
   		echo "border-collapse: collapse;";
   		echo "width: 60%;";
   		echo "margin: 0 auto;";
-		echo "}";
+	echo "}";
 
 	echo "td, th {";
   		echo "border: 1px solid #dddddd;";
   		echo "text-align: left;";
   		echo "padding: 8px;";
-		echo "}";
+	echo "}";
 
 	echo "tr:nth-child(even) {";
   		echo "background-color: #dddddd;";
-		echo "}";
+	echo "}";
 
 	echo "td[colspan=\"3\"] {";
     	echo "text-align: center;";
     	echo "background-color: #fff;";
 		echo "}";
 
+	echo "img{";
+		echo "margin: 0 auto;";
+		echo "width: 80%;";
+		echo "height: auto;";
+	echo "}";
+	
 	echo "</style>";
 	echo "</head>";
 	echo "<body>";
