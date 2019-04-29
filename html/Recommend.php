@@ -92,7 +92,7 @@
 
 			echo "<table>";
 			echo "<tr>";
-				echo "<td colspan=\"3\">" . "Makes " . {$recipe['yield']} . "Serving(s)" . "</td>";
+				echo "<td colspan=\"3\">" . "Makes " . $recipe['yield'] . "Serving(s)" . "</td>";
 			echo "</tr>";
 			echo "<tr>";
 				echo "<td colspan=\"3\">" . "Calories: " . $Calories_In_Recipe . "</td>";
