@@ -1,17 +1,15 @@
 body{
-	margin-left: 10px;
 	font-family: Georgia, serif;
 	color: #2F3848;
 }
 
 li{
-	margin-left: 10px;
+
 	list-style: none;
 	font-family: Georgia, serif;
 }
 
 button{
-	margin-left: 10px;
 	font-family: Georgia, serif;
 	width: 100px;
 	transition: 0.2s;
@@ -38,7 +36,7 @@ button:hover{
 
 	.form{
 	display: block;
- 	margin-left: 40%;
+ 	margin-left: auto;
  	margin-right: auto;
  	width: 60%;
  	height: auto;
