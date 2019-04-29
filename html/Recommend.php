@@ -92,7 +92,7 @@
 			#Prints for recipes go here
 			echo "<table>";
 			echo "<tr>";
-				echo "<td colspan=\"3\" swf_fontsize(24px)><b>" . "Recipe: " . "</b><a href='" . $recipe['url'] . "'>" . $recipe['label'] . "</a></b></td>";
+				echo "<td colspan=\"3\" swf_fontsize(30px)><b>" . "Recipe: " . "</b><a href='" . $recipe['url'] . "'>" . $recipe['label'] . "</a></b></td>";
 			echo "</tr>";
 			echo "<tr>";
 				echo "<td colspan=\"3\"><a href='" . $recipe['url'] . "'><img src='" . $recipe['image'] . "' alt='Recipe_Img'></a><br></td>";
