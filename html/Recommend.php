@@ -53,26 +53,26 @@
 			{
 				if ($nutrient['label'] === "Fat")
 				{
-					$div = round(floatval($nutrient['quantity'])/intval($recipe['yield']), 2);
-					$Fat_Leftover = round(($Fat_Remaining_Grams - $div), 2);
+					$Fat_In_Recipe = round(floatval($nutrient['quantity'])/intval($recipe['yield']), 2);
+					$Fat_Leftover = round(($Fat_Remaining_Grams - $Fat_In_Recipe), 2);
 
-					echo "&emsp;&emsp;" . $nutrient['label'] . ": " . $div . $nutrient['unit'] . "<br>";
+					echo "&emsp;&emsp;" . $nutrient['label'] . ": " . $Fat_In_Recipe . $nutrient['unit'] . "<br>";
 					echo "&emsp;&emsp;" . "Fat Remaining: " . $Fat_Leftover . $nutrient['unit'] . "<br>";
 				}
 				elseif ($nutrient['label'] === "Carbs")
 				{
-					$div = round(floatval($nutrient['quantity'])/intval($recipe['yield']), 2);
-					$Carb_Leftover = round(($Carb_Remaining_Grams - $div), 2);
+					$Carb_In_Recipe = round(floatval($nutrient['quantity'])/intval($recipe['yield']), 2);
+					$Carb_Leftover = round(($Carb_Remaining_Grams - $Carb_In_Recipe), 2);
 
-					echo "&emsp;&emsp;" . $nutrient['label'] . ": " . $div . $nutrient['unit'] . "<br>";
+					echo "&emsp;&emsp;" . $nutrient['label'] . ": " . $Carb_In_Recipe . $nutrient['unit'] . "<br>";
 					echo "&emsp;&emsp;" . "Carbs Remaining: " . $Carb_Leftover . $nutrient['unit'] . "<br>";
 				}
 				elseif ($nutrient['label'] === "Protein")
 				{
-					$div = round(floatval($nutrient['quantity'])/intval($recipe['yield']), 2);
-					$Pro_Leftover = round(($Pro_Remaining_Grams - $div), 2);
+					$Pro_In_Recipe = round(floatval($nutrient['quantity'])/intval($recipe['yield']), 2);
+					$Pro_Leftover = round(($Pro_Remaining_Grams - $Pro_In_Recipe), 2);
 
-					echo "&emsp;&emsp;" . $nutrient['label'] . ": " . $div . $nutrient['unit'] . "<br>";
+					echo "&emsp;&emsp;" . $nutrient['label'] . ": " . $Pro_In_Recipe . $nutrient['unit'] . "<br>";
 					echo "&emsp;&emsp;" . "Protein Remaining: " . $Pro_Leftover . $nutrient['unit'] . "<br>";
 				}
 			}
