@@ -52,34 +52,18 @@ else:
 Calories_Consumed = (Pro_Consumed_Cals + Fat_Consumed_Cals + Carbs_Consumed_Cals)
 Calories_Remaining = Calories_Limit - Calories_Consumed
 
-if Search_Term != "":
-	URL = "https://api.edamam.com/search"
-	PARAMS = (
-    	('q', Search_Term),
-    	('app_id', config.app_id),
-    	('app_key', config.api_key),
-    	('from', '0'),
-    	('to', str(config.number_of_results)),
-    	('calories', str(int(Calories_Remaining * .75)) + "-" + str(Calories_Remaining)),
-    	('nutrients[PROCNT]', str(int(Protein_Remaining_Grams * .75)) + "-" + str(int(Protein_Remaining_Grams))),
-    	('nutrients[FAT]', str(int(Fat_Remaining_Grams * .75)) + "-" + str(int(Fat_Remaining_Grams))),
-    	('nutrients[CHOCDF]', str(int(Carb_Remaining_Grams * .75)) + "-" + str(int(Carb_Remaining_Grams))),
-	)
-
-else:
-	URL = "https://api.edamam.com/search"
-	PARAMS = (
-		('q', ""),
-    	('app_id', config.app_id),
-    	('app_key', config.api_key),
-    	('from', '0'),
-    	('to', str(config.number_of_results)),
-    	('calories', str(int(Calories_Remaining * .75)) + "-" + str(Calories_Remaining)),
-    	('nutrients[PROCNT]', str(int(Protein_Remaining_Grams * .75)) + "-" + str(int(Protein_Remaining_Grams))),
-    	('nutrients[FAT]', str(int(Fat_Remaining_Grams * .75)) + "-" + str(int(Fat_Remaining_Grams))),
-    	('nutrients[CHOCDF]', str(int(Carb_Remaining_Grams * .75)) + "-" + str(int(Carb_Remaining_Grams))),
-	)
-
+URL = "https://api.edamam.com/search"
+PARAMS = (
+    ('q', Search_Term),
+    ('app_id', config.app_id),
+    ('app_key', config.api_key),
+    ('from', '0'),
+    ('to', str(config.number_of_results)),
+    ('calories', str(int(Calories_Remaining * .75)) + "-" + str(Calories_Remaining)),
+    ('nutrients[PROCNT]', str(int(Protein_Remaining_Grams * .75)) + "-" + str(int(Protein_Remaining_Grams))),
+    ('nutrients[FAT]', str(int(Fat_Remaining_Grams * .75)) + "-" + str(int(Fat_Remaining_Grams))),
+    ('nutrients[CHOCDF]', str(int(Carb_Remaining_Grams * .75)) + "-" + str(int(Carb_Remaining_Grams))),
+)
 
 r = requests.get(url=URL, params=PARAMS)
 # Generating call request
