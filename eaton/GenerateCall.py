@@ -18,7 +18,11 @@ Fat_Consumed_Grams = int(sys.argv[6])
 Carb_Consumed_Grams = int(sys.argv[7])
 
 # User's search term
-Search_Term = sys.argv[8]
+if sys.argv[8] == "null":
+    Search_Term = ''
+else:
+    Search_Term = sys.argv[8]
+
 
 
 # Calculating how many calories of each macro have been eaten that day

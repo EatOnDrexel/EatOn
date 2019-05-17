@@ -11,7 +11,7 @@
 
 	$Search_Term = $_POST['Term'];
 
-	$NullSearch = null;
+	$NullSearch = "null";
 
 	//Find out how many grams of each macro user needs. This is done in Python but needs done again here (for now)
 	$Carb_Remaining_Grams = ((($Cal_Limit * ($Carb_Limit / 100)) / 4) - $Carb_Consumed);
@@ -23,7 +23,6 @@
 	if (empty($Search_Term))
 	{
 		$returned = exec("python3 /var/www/eaton/GenerateCall.py $Pro_Limit $Fat_Limit $Carb_Limit $Cal_Limit $Pro_Consumed $Fat_Consumed $Carb_Consumed $NullSearch");
-		echo "empty";
 	}
 	
 	else
