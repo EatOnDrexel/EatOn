@@ -11,7 +11,7 @@
 
 	$Search_Term = $_POST['Term'];
 
-	$NullSearch = "";
+	$NullSearch = null;
 
 	//Find out how many grams of each macro user needs. This is done in Python but needs done again here (for now)
 	$Carb_Remaining_Grams = ((($Cal_Limit * ($Carb_Limit / 100)) / 4) - $Carb_Consumed);
