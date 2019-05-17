@@ -20,14 +20,14 @@
 
 
 	//send to python script and get returned JSON values
-	if (Search_Term != "")
+	if (empty(Search_Term)):
 	{
-		$returned = exec("python3 /var/www/eaton/GenerateCall.py $Pro_Limit $Fat_Limit $Carb_Limit $Cal_Limit $Pro_Consumed $Fat_Consumed $Carb_Consumed $Search_Term");
+		$returned = exec("python3 /var/www/eaton/GenerateCall.py $Pro_Limit $Fat_Limit $Carb_Limit $Cal_Limit $Pro_Consumed $Fat_Consumed $Carb_Consumed $NullSearch");
 	}
 	
 	else
 	{
-		$returned = exec("python3 /var/www/eaton/GenerateCall.py $Pro_Limit $Fat_Limit $Carb_Limit $Cal_Limit $Pro_Consumed $Fat_Consumed $Carb_Consumed $NullSearch");
+		$returned = exec("python3 /var/www/eaton/GenerateCall.py $Pro_Limit $Fat_Limit $Carb_Limit $Cal_Limit $Pro_Consumed $Fat_Consumed $Carb_Consumed $Search_Term");
 	}
 	
 
@@ -162,7 +162,6 @@
 		if (empty($filteredhits))
 		{
 			echo "No results";
-			echo $Search_Term;
 		}
 		//if there are results, call the printinfo function
 		else
