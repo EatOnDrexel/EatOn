@@ -162,6 +162,7 @@
 		if (empty($filteredhits))
 		{
 			echo "No results";
+			echo $Search_Term;
 		}
 		//if there are results, call the printinfo function
 		else
