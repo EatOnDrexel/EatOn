@@ -69,6 +69,7 @@ if Search_Term != "":
 else:
 	URL = "https://api.edamam.com/search"
 	PARAMS = (
+		('q')
     	('app_id', config.app_id),
     	('app_key', config.api_key),
     	('from', '0'),
