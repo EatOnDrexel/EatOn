@@ -11,13 +11,25 @@
 
 	$Search_Term = $_POST['Term'];
 
+	$NullSearch = "";
+
 	//Find out how many grams of each macro user needs. This is done in Python but needs done again here (for now)
 	$Carb_Remaining_Grams = ((($Cal_Limit * ($Carb_Limit / 100)) / 4) - $Carb_Consumed);
 	$Pro_Remaining_Grams = ((($Cal_Limit * ($Pro_Limit/ 100)) / 4) - $Pro_Consumed);
 	$Fat_Remaining_Grams = ((($Cal_Limit * ($Fat_Limit / 100)) / 9) - $Fat_Consumed);
 
+
 	//send to python script and get returned JSON values
-	$returned = exec("python3 /var/www/eaton/GenerateCall.py $Pro_Limit $Fat_Limit $Carb_Limit $Cal_Limit $Pro_Consumed $Fat_Consumed $Carb_Consumed $Search_Term");
+	if (Search_Term != "")
+	{
+		$returned = exec("python3 /var/www/eaton/GenerateCall.py $Pro_Limit $Fat_Limit $Carb_Limit $Cal_Limit $Pro_Consumed $Fat_Consumed $Carb_Consumed $Search_Term");
+	}
+	
+	else
+	{
+		$returned = exec("python3 /var/www/eaton/GenerateCall.py $Pro_Limit $Fat_Limit $Carb_Limit $Cal_Limit $Pro_Consumed $Fat_Consumed $Carb_Consumed $NullSearch);
+	}
+	
 
 	//converts output into a php array
 	$recipesData = json_decode($returned, true);
