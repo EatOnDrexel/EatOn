@@ -163,6 +163,7 @@
 		if (empty($filteredhits))
 		{
 			echo "No results";
+			echo $returned;
 		}
 		//if there are results, call the printinfo function
 		else
